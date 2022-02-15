@@ -97,3 +97,16 @@ body {
     background-color: aqua;
     margin-bottom: 5px;
 }
+.teste{
+    display: none;
+}
+.caixateste2{
+    width:100px;
+    height:600px;
+    background: #EC362D;
+}
+.caixateste3{
+    width:100px;
+    height:600px;
+    background: blue;
+}

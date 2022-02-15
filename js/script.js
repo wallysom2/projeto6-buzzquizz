@@ -11,6 +11,19 @@ function obterQuizzes() {
       alert("Xiii! Deu ruim na hora de receber mensagens!");
     })
   }
+  function tela1(){
+    const tela1 = document.querySelector('.tela1')
+    tela1.classList.add('teste')
+    const tela2 = document.querySelector('.tela2')
+    tela2.classList.remove('teste')
+  }
+  function tela2(){
+    const tela1 = document.querySelector('.tela1')
+    tela1.classList.add('teste')
+    const tela3 = document.querySelector('.tela3')
+    tela3.classList.remove('teste')
+  }
+
   function renderizarQuizzes(quizzes) {
     const mostrarQuizz = document.querySelector(".corpo-quizzes");
     mostrarQuizz.innerHTML = "";
@@ -23,7 +36,7 @@ function obterQuizzes() {
        
    
         mostrarQuizz.innerHTML +=  `
-          <div class="cada-quizz">
+          <div onclick="tela2()" class="cada-quizz">
             <div><img class= "quizz-imagem" src="${imagem}" alt="Imagem do quizz: ${titulo}"></div>
             <div class= "quizz-titulo"> ${titulo}</div>
           </div>
