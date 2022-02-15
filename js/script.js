@@ -20,18 +20,16 @@ function obterQuizzes() {
         const imagem = quizz.image;
     
 
-        let quizzHTML = null;
+       
    
-          quizzHTML = `
+        mostrarQuizz.innerHTML +=  `
           <div class="cada-quizz">
             <div><img class= "quizz-imagem" src="${imagem}" alt="Imagem do quizz: ${titulo}"></div>
             <div class= "quizz-titulo"> ${titulo}</div>
           </div>
           `
 
-          if(quizzHTML !== null) {
-            mostrarQuizz.innerHTML += quizzHTML;
-          }
+          
 
     }) }
 
