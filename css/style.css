@@ -44,7 +44,6 @@ body {
     margin-top: 7px;
     font-family: Roboto;
     font-size: 20px;
-    line-height: 23px;
     color: #B9B9B9;
     display: flex;
     align-items: center;
@@ -53,8 +52,6 @@ body {
 .caixa-criar-quizz-botao{
     width: 151px;
     height: 40px;
-    left: 113px;
-    top: 208px;
     background: #FAFAFA;
     border: 1px dashed #EC362D;
     box-sizing: border-box;
@@ -66,4 +63,37 @@ body {
     font-size: 21px;
     line-height: 25px;
     color: #EC362D;
+}
+.todos-quizz {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    color: #000000;
+    margin-top: 35px;
+    margin-left: 18px;
+}
+.corpo-quizzes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.quizz-imagem{
+    width: 340px;
+    height: 181px;
+
+}
+.quizz-titulo {
+    width: 301px;
+    height: 54px;
+    font-family: Roboto;
+    font-size: 19px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    word-wrap: break-word;
+    background-color: aqua;
+    margin-bottom: 5px;
 }
