@@ -13,15 +13,23 @@ function obterQuizzes() {
   }
   function tela1(){
     const tela1 = document.querySelector('.tela1')
-    tela1.classList.add('teste')
+    tela1.classList.add('esconderTela')
     const tela2 = document.querySelector('.tela2')
-    tela2.classList.remove('teste')
+    tela2.classList.remove('esconderTela')
   }
   function tela2(){
     const tela1 = document.querySelector('.tela1')
-    tela1.classList.add('teste')
+    tela1.classList.add('esconderTela')
     const tela3 = document.querySelector('.tela3')
-    tela3.classList.remove('teste')
+    tela3.classList.remove('esconderTela')
+  }
+  function tela32(){
+    
+    const tela3 = document.querySelector('git.tela31')
+    tela3.classList.add('esconderTela')
+    const tela32 = document.querySelector('.tela32')
+    tela32.classList.remove('esconderTela')
+
   }
 
   function renderizarQuizzes(quizzes) {

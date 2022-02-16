@@ -4,6 +4,7 @@
     --cor-fundo: #E5E5E5;
 
 }
+
 body {
     width: 100%;
     height: 100%;
@@ -117,7 +118,7 @@ body {
     background-color: aqua;
     margin-bottom: 5px;
 }
-.teste{
+.esconderTela{
     display: none;
 }
 .caixateste2{
@@ -125,13 +126,46 @@ body {
     height:600px;
     background: #EC362D;
 }
-.caixateste3{
+.tela31{
     width:100vw;
     height:100vh;
-  
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     background: green;
 }
+.corpTela31{
+  background: #EC362D;
+  width:340px;
+  height:400px ;
+}
+.corpTela31{
+  background: #EC362D;
+  width:340px;
+  height:400px ;
+
+}
+.textoTela3{
+  margin-left: 90px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  
+
+}
+.inputTela31{
+  margin-left: 40px;
+  height: 30px;
+  width:250px;
+  margin-bottom: 5px;
+}
+.botaoTela31{
+  margin-top: 7px;
+  margin-left: 45px;
+  width: 240px;
+  height:45px;
+}
+
 
 
 
