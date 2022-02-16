@@ -111,5 +111,28 @@ body {
     line-height: 22px;
     display: flex;
     align-items: center;
-    color:#FFFFFF;
-  }
+
+    flex-wrap: nowrap;
+    word-wrap: break-word;
+    background-color: aqua;
+    margin-bottom: 5px;
+}
+.teste{
+    display: none;
+}
+.caixateste2{
+    width:100px;
+    height:600px;
+    background: #EC362D;
+}
+.caixateste3{
+    width:100vw;
+    height:100vh;
+  
+
+    background: green;
+}
+
+
+
+
