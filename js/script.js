@@ -23,7 +23,7 @@ function obterQuizzes() {
     const tela3 = document.querySelector('.tela3')
     tela3.classList.remove('teste')
   }
-
+  
   function renderizarQuizzes(quizzes) {
     const mostrarQuizz = document.querySelector(".corpo-quizzes");
     mostrarQuizz.innerHTML = "";
@@ -32,15 +32,14 @@ function obterQuizzes() {
         const titulo = quizz.title;
         const imagem = quizz.image;
     
-
-       
    
         mostrarQuizz.innerHTML +=  `
-          <div onclick="tela1()" class="cada-quizz">
-            <div><img class= "quizz-imagem" src="${imagem}" alt="Imagem do quizz: ${titulo}"></div>
-            <div class= "quizz-titulo"> ${titulo}</div>
-          </div>git 
+        <div class="container-quizz">
+          <img class="imagem-quizz" src="${imagem}">
+          <p class="texto-quizz">${titulo}</p>
+        </div>
           `
+
     }) }
 
     obterQuizzes();
