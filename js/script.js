@@ -4,7 +4,7 @@ let url
 let quantidadePerguntas
 let quantidadeNiveis
 const gradiente = "background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 65.62%, rgba(0, 0, 0, 0.8) 100%)"
-function obterQuizzes() {
+    function obterQuizzes() {
     const promise = axios.get(`${QUIZZ_API}/quizzes`);
     promise.then(resposta => {
       console.log(resposta.data);
