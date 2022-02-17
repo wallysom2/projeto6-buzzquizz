@@ -90,21 +90,32 @@ header {
   margin-top: 14px;
 }
 
-.imagem-quizz {
-  position: relative;
-  width: 340px;
-  height: 181px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 64.58%, #000000 100%), url(image.png);
-  border-radius: 5px;
 
+ 
+  .imagem-quizz {
+    width: 340px;
+    height: 181px;
+    border-radius: 5px;
+    position: relative;
+    margin-top: 29px;
+}
 
+.container-quizz::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: "";
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 64.58%, #000000 100%);
+    border-radius: 5px;
 }
 
 .texto-quizz {
   position: absolute;
   font-size: 32px;
   left: 16px;
-  top: 120px;
+  top: 150px;
   width: 301px;
   height: 54px;
   font-family: Roboto;
@@ -113,6 +124,7 @@ header {
   display: flex;
   align-items: center;
   color:#FFFFFF;
+  z-index: 1;
 }
 .esconderTela{
     display: none;
