@@ -30,9 +30,6 @@ header {
   z-index: 2;
 }
   
-.esconder {
-  display: block;
-}
 .caixa-criar-quizz {
   width: 340px;
   height: 181px;
@@ -88,16 +85,16 @@ header {
   justify-content: center;
   flex-wrap: nowrap;
   margin-top: 14px;
-}
 
-
- 
+} 
   .imagem-quizz {
     width: 340px;
     height: 181px;
     border-radius: 5px;
     position: relative;
     margin-top: 29px;
+    background-size: 100%;
+    object-fit: cover;
 }
 
 .container-quizz::after {
@@ -129,6 +126,11 @@ header {
 .esconderTela{
     display: none;
 }
+.tela2{
+  margin-top: 85px;
+
+}
+
 .caixateste2{
   width:100px;
   height:600px;
@@ -234,9 +236,142 @@ header {
   align-items:center;
  
 }
+.caixateste3{
+  width:100vw;
+  height:100vh;
+}
 
 
 
 
+.tela2 img {
+  width: 163px;
+  height: 113px;
+}
 
+.titulo-quizz {
+  width: 375px;
+  height: 142px; 
+  background-image: url("https://criticalhits.com.br/wp-content/uploads/2020/01/capa-22.jpg");
+  background-size: cover;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  text-align: center;
 
+}
+.titulo-quizz::after{
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://criticalhits.com.br/wp-content/uploads/2020/01/capa-22.jpg");
+}
+.titulo-quizz h2{
+  font-family: Roboto;
+  font-size: 19px;
+  line-height: 22px;
+  color: #FFFFFF;
+  margin: auto;
+}
+.titulo-pergunta{
+  width: 340px;
+  height: 89px;
+  left: 18px;
+  top: 253px;
+  background: #434CA0;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  margin-top: 42px;
+}
+.titulo-pergunta h3{
+  font-family: Roboto;
+  font-size: 19px;
+  line-height: 22px;
+  color: #FFFFFF;
+  margin: auto;
+}
+.bloco-respostas{
+  width: 340px;
+  height: 300px;
+  margin: auto;
+  margin-top: 13px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  
+}
+.resposta{
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  margin-top: 18px;
+}
+.resposta span {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 13px;
+  margin-top: 5px;
+}
+.titulo-resultado{
+  width: 340px;
+  height: 99px;
+  background: #EC362D;
+  margin: auto;
+  margin-top: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.titulo-resultado h3{
+  width: 308px;
+  height: 54px;
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 22px;
+  color: #FFFFFF;
+}
+.conteudo-reultado{
+  display: flex;
+  flex-direction: column;
+}
+.conteudo-reultado img{
+  width: 340px;
+  height: 255px;
+  margin: auto;
+  margin-top: 9px;
+}
+.conteudo-reultado span {
+  width: 340px;
+  height: 96px;
+  margin: auto;
+  margin-top: 9px;
+}
+.reiniciar-quizz{
+  width: 220.32px;
+  height: 44px;
+  background: #EC362D;
+  border-radius: 15px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  
+}
+.reiniciar-quizz p {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: #FFF5F4;
+  margin: auto;
+}
+.voltar-inicio{
+width: 220px;
+height: 44px;
+margin: auto;
+margin-top: 15px;
+display: flex;
+justify-content: center;
+
+}
