@@ -39,7 +39,7 @@
           <div class="caixa-texto">
             Você não criou nenhum quizz ainda :(
           </div>
-        <button onclick="tela2()" class="caixa-criar-quizz-botao">Criar Quizz</button>
+        <button onclick="tela3()" class="caixa-criar-quizz-botao">Criar Quizz</button>
         </div>
 
         <p class="todos-quizz">Todos os Quizzes</p>
@@ -54,24 +54,76 @@
       </div>
 
       <div class="tela3 esconderTela">
-        <div class="tela31">
-          
-          <div class="corpoTela31" > 
-            <div class="textoTela3"> <strong> <h1> Comece pelo começo</h1> </strong></div>
-            <input class="inputTela31" type="text" placeholder="Titulo do seu quizz">
-            <input class="inputTela31" type="text" placeholder="URL de imagem do seu quizz">
-            <input  class="inputTela31" type="text" placeholder="quantidade de perguntas do quizz">
-            <input class="inputTela31" type="text" placeholder="Quantidade de niveis do quizz">
-            <button onclick="tela32()" class="botaoTela31"> Prosseguir pra criar perguntas</button>
-          </div>
-          
-
+        <div class="tela31 ">
+            <div class="corpoTela31 " > 
+              <div class="textoTela3"> <strong> <h1> Comece pelo começo</h1> </strong></div>
+              <input class="inputTela ip1"  type="text" placeholder="Titulo do seu quizz" id="TituloQuizz">
+              <input class="inputTela ip2" type="text" placeholder="URL de imagem do seu quizz">
+              <input  class="inputTela ip3" type="number" placeholder="quantidade de perguntas do quizz">
+              <input class="inputTela ip4" type="number" placeholder="Quantidade de niveis do quizz">
+              <button onclick="tela32()" class="botaoTela31"> Prosseguir pra criar perguntas</button>
+            </div>
           </div>
         </div>
-        <div class="tela32 esconderTela">
+        
+      </div>
+      <div class="tela32 esconderTela">
+        <div class="tela322">
           <div class="corpoTela32">
+            <div class="textoTela3"> <strong> <h1> Crie suas perguntas</h1> </strong></div>
+              <div class="textoTitulo"> <p> pergunta 1</p></div>
+              <input class="inputTela" type="text" placeholder="Texto da pergunta">
+              <input class="inputTela" type="text" placeholder="Cor de fundo de pergunta">
+              <div class="textoTitulo"> <p> Resposta correta</p></div>
+              <input  class="inputTela" type="text" placeholder="Resposta correta">
+              <input class="inputTela" type="text" placeholder="URL da imagems">
+              <div class="textoTitulo"> <p> Resposta correta</p></div>
+              <input  class="inputTela" type="text" placeholder="Resposta incorreta 1">
+              <input class="inputTela2" type="text" placeholder="URL da imagems 1">
 
+              <input  class="inputTela" type="text" placeholder="Resposta incorreta 2">
+              <input class="inputTela2" type="text" placeholder="URL da imagems 2">
+
+              <input  class="inputTela" type="text" placeholder="Resposta incorreta 3">
+              <input class="inputTela" type="text" placeholder="URL da imagems 3">
+
+              <div class='inserir'>pergunta 2     </div>
+
+              <div class='inserir'>  pergunta 3   </div>
+
+              <button onclick="tela33()" class="botaoTela31"> Prosseguir pra criar nives</button>
           </div>
+        </div>
+      </div>
+      <div class="tela33 esconderTela">
+        <div class="tela333">
+          <div class="corpoTela33">
+            <div class="textoTela3"> <strong> <h1> Agora, decida os niveis!</h1> </strong></div>
+              <div> <p> Nivel 1</p></div>
+              <input class="inputTela" type="text" placeholder="Titulo do nivel">
+              <input class="inputTela" type="text" placeholder="% de certo minima">
+              <input  class="inputTela" type="text" placeholder="URL da imagem do nivel">
+              <textarea class="inputTela3" type="text" placeholder="Descrição do nível"></textarea>
+
+              <div class="inserir" ><p>pergunta 2</p>     </div>
+
+              <div class='inserir'> <p> pergunta 3</p>   </div>
+
+              <button onclick="tela33()" class="botaoTela31"> Finalizar Quizz</button>
+          </div>
+        </div>
+
+      </div>
+      <div class="tela34 esconderTela">
+        <div class="tela344">
+          <div class="textoTela3"> <strong> <h1> Seu quiz está pronto</h1> </strong></div>
+          <img>
+          <button class="botaoTela31"> Acessar Quizz</button>
+          <div><p>Voltar pra home</p></div>
+
+
+        </div>
+
       </div>
     </main>
 

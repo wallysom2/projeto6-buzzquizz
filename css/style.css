@@ -128,20 +128,55 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    
 
     background: green;
 }
-.corpTela31{
-  background: #EC362D;
-  width:340px;
-  height:400px ;
-}
-.corpTela31{
-  background: #EC362D;
-  width:340px;
-  height:400px ;
+.tela322{
+  width:100vw;
+  height:100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
 
+  background: green;
 }
+.tela333{
+  width:100vw;
+  height:100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+
+  background: orange;
+}
+.corpoTela31{
+  background: #EC362D;
+  width:340px;
+  height:400px;
+  display: flex;
+  flex-direction: column;
+  
+}
+.corpoTela32{
+  background: purple;
+  width:340px;
+  height:800px;
+  display: flex;
+  flex-direction: column;
+  
+}
+.corpoTela33{
+  background: green;
+  width:340px;
+  height:600px;
+  display: flex;
+  flex-direction: column;
+  
+}
+
 .textoTela3{
   margin-left: 90px;
   margin-top: 40px;
@@ -149,23 +184,47 @@ header {
   
 
 }
-.inputTela31{
-  margin-left: 40px;
+.inputTela{
+  margin-left: 20px;
   height: 30px;
-  width:250px;
+  width:300px;
+  margin-bottom: 5px;
+}
+.inputTela2{
+  margin-left: 20px;
+  height: 30px;
+  width:300px;
+  margin-bottom: 25px;
+}
+.inputTela3{
+  margin-left: 20px;
+  height: 150px;
+  width:300px;
   margin-bottom: 5px;
 }
 .botaoTela31{
   margin-top: 7px;
-  margin-left: 45px;
-  width: 240px;
+  margin-left: 30px;
+  width: 280px;
   height:45px;
 }
-
-.caixateste3{
-  width:100vw;
-  height:100vh;
-
-
-
+.textoTitulo{
+  margin-left:35px;
+  margin-bottom: 15px;
+  margin-top: 15px;
 }
+.inserir{
+  height: 50px;
+  margin-top:10px;
+  margin-bottom: 10px;
+  background: #EC362D;
+  display: flex;
+  align-items:center;
+ 
+}
+
+
+
+
+
+
