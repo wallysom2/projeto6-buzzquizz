@@ -1,4 +1,5 @@
 const QUIZZ_API = "https://mock-api.driven.com.br/api/v4/buzzquizz";
+const gradiente = "background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 65.62%, rgba(0, 0, 0, 0.8) 100%)"
 
 function obterQuizzes() {
     const promise = axios.get(`${QUIZZ_API}/quizzes`);
