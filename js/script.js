@@ -243,44 +243,45 @@ function abrirPerg3(){
   <input  class="inputTela perggg9" type="text" placeholder="Resposta incorreta 3">
   <input class="inputTela perggg10" type="text" placeholder="URL da imagems 3">`
 }
-//function abrirNivel2(){
-  //ul4.innerHTML=`<div> <p> Nivel 2</p></div>
-  //<input class="inputTela niv1" type="text" placeholder="Titulo do nivel">
-  //<input class="inputTela niv2" type="text" placeholder="% de certo minima">
- // <input  class="inputTela niv3" type="text" placeholder="URL da imagem do nivel">
-  //<textarea class="inputTela3 niv4" type="text" placeholder="Descrição do nível"></textarea>`
+function abrirNivel2(){
+  ul4.innerHTML=`<div> <p> Nivel 2</p></div>
+  <input class="inputTela nivv1" type="text" placeholder="Titulo do nivel">
+  <input class="inputTela nivv2" type="text" placeholder="% de certo minima">
+  <input  class="inputTela nivv3" type="text" placeholder="URL da imagem do nivel">
+  <textarea class="inputTela3 nivv4" type="text" placeholder="Descrição do nível"></textarea>`
 
-//}
-//function abrirNivel3(){
- // ul5.innerHTML=`<div> <p> Nivel 3</p></div>
- // <input class="inputTela niv1" type="text" placeholder="Titulo do nivel">
- // <input class="inputTela niv2" type="text" placeholder="% de certo minima">
- // <input  class="inputTela niv3" type="text" placeholder="URL da imagem do nivel">
-  //<textarea class="inputTela3 niv4" type="text" placeholder="Descrição do nível"></textarea>`
+}
+function abrirNivel3(){
+  ul5.innerHTML=`<div> <p> Nivel 3</p></div>
+  <input class="inputTela nivvv1" type="text" placeholder="Titulo do nivel">
+  <input class="inputTela nivvv2" type="text" placeholder="% de certo minima">
+  <input  class="inputTela nivvv3" type="text" placeholder="URL da imagem do nivel">
+  <textarea class="inputTela3 nivvv4" type="text" placeholder="Descrição do nível"></textarea>`
 
-//}
+}
 function tela34(){
+ 
   let ul6 = document.querySelector(".fim");
   ul6.innerHTML=`<div class="tela344">
   <div class="textoTela3"> <strong> <h1> Seu quiz está pronto</h1> </strong></div>
-  <img src='${url}'>
+  <img src="${url}">
   <button class="botaoTela31"> Acessar Quizz</button>
   <div><p>Voltar pra home</p></div>
 </div>`
-  //tituloNivel.document.querySelector('.niv1').value
-  //acertoMinimo.document.querySelector('.niv2').value
-  //urlNivel.document.querySelector('.niv3').value
-  //descricaoNive.document.querySelector('.niv4').value
+  tituloNivel=document.querySelector('.niv1').value
+  acertoMinimo=document.querySelector('.niv2').value
+  urlNivel=document.querySelector('.niv3').value
+  descricaoNive=document.querySelector('.niv4').value
 
-  //tituloNivel2.querySelector('.nivv1').value
-  //acertoMinimo2.querySelector('.nivv2').value
-  //urlNivel2.querySelector('.nivv3').value
-  //descricaoNive2.querySelector('.nivv4').value
+  tituloNivel2=document.querySelector('.nivv1').value
+  acertoMinimo2=document.querySelector('.nivv2').value
+  urlNivel2=document.querySelector('.nivv3').value
+  descricaoNive2=document.querySelector('.nivv4').value
 
-  //tituloNivel3.querySelector('.nivvv1').value
- // acertoMinimo3.querySelector('.nivvv2').value
- // urlNivel3.querySelector('.nivvv3').value
- // descricaoNive3.querySelector('.nivvv4').value
+  tituloNivel3=document.querySelector('.nivvv1').value
+  acertoMinimo3=document.querySelector('.nivvv2').value
+  urlNivel3=document.querySelector('.nivvv3').value
+  descricaoNive3=document.querySelector('.nivvv4').value
   const tela32 = document.querySelector('.tela33 ')
   tela32.classList.add('esconderTela')
   const tela33 = document.querySelector('.tela34 ')
