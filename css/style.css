@@ -175,9 +175,10 @@ header {
   
 }
 .corpoTela32{
+  margin-top: 250px;
   background: purple;
   width:340px;
-  height:800px;
+  
   display: flex;
   flex-direction: column;
   
@@ -185,7 +186,7 @@ header {
 .corpoTela33{
   background: green;
   width:340px;
-  height:600px;
+  
   display: flex;
   flex-direction: column;
   
@@ -228,7 +229,7 @@ header {
   margin-top: 15px;
 }
 .inserir{
-  height: 50px;
+ 
   margin-top:10px;
   margin-bottom: 10px;
   background: #EC362D;

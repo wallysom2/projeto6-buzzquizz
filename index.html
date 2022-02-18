@@ -33,7 +33,7 @@
     <!-- corpo -->
     <main>
 
-      <div class="tela1 esconderTela">
+      <div class="tela1">
     <!-- Mostrar caixa de criar quizz -->
         <div class="caixa-criar-quizz esconder">
           <div class="caixa-texto">
@@ -48,7 +48,7 @@
         <div class="corpo-quizzes"></div>
       </div>
 
-      <div class="tela2">
+      <div class="tela2 esconderTela">
     <main class="pagina-quizz">
       <section class="titulo-quizz">
           <h2 > <span>O quão Potterhead você é?</span></h2>
@@ -163,24 +163,24 @@
           <div class="corpoTela32">
             <div class="textoTela3"> <strong> <h1> Crie suas perguntas</h1> </strong></div>
               <div class="textoTitulo"> <p> pergunta 1</p></div>
-              <input class="inputTela" type="text" placeholder="Texto da pergunta">
-              <input class="inputTela" type="text" placeholder="Cor de fundo de pergunta">
+              <input class="inputTela perg1" type="text" placeholder="Texto da pergunta">
+              <input class="inputTela perg2" type="text" placeholder="Cor de fundo da pergunta">
               <div class="textoTitulo"> <p> Resposta correta</p></div>
-              <input  class="inputTela" type="text" placeholder="Resposta correta">
-              <input class="inputTela" type="text" placeholder="URL da imagems">
+              <input  class="inputTela perg3" type="text" placeholder="Resposta correta">
+              <input class="inputTela perg4" type="text" placeholder="URL da imagems">
               <div class="textoTitulo"> <p> Resposta correta</p></div>
-              <input  class="inputTela" type="text" placeholder="Resposta incorreta 1">
-              <input class="inputTela2" type="text" placeholder="URL da imagems 1">
+              <input  class="inputTela perg5" type="text" placeholder="Resposta incorreta 1">
+              <input class="inputTela2 perg6" type="text" placeholder="URL da imagems 1">
 
-              <input  class="inputTela" type="text" placeholder="Resposta incorreta 2">
-              <input class="inputTela2" type="text" placeholder="URL da imagems 2">
+              <input  class="inputTela perg7" type="text" placeholder="Resposta incorreta 2">
+              <input class="inputTela2 perg8" type="text" placeholder="URL da imagems 2">
 
-              <input  class="inputTela" type="text" placeholder="Resposta incorreta 3">
-              <input class="inputTela" type="text" placeholder="URL da imagems 3">
+              <input  class="inputTela perg9" type="text" placeholder="Resposta incorreta 3">
+              <input class="inputTela perg10" type="text" placeholder="URL da imagems 3">
 
-              <div class='inserir'>pergunta 2     </div>
+              <div class='inserir'>  <ul class="pergunta2"> </ul> <img onclick="abrirPerg2()" src="vector.png">  </div>
 
-              <div class='inserir'>  pergunta 3   </div>
+              <div class='inserir'>  <ul class="pergunta3"> </ul>  <img  onclick="abrirPerg3()" src="vector.png"> </div>
 
               <button onclick="tela33()" class="botaoTela31"> Prosseguir pra criar nives</button>
           </div>
@@ -191,29 +191,24 @@
           <div class="corpoTela33">
             <div class="textoTela3"> <strong> <h1> Agora, decida os niveis!</h1> </strong></div>
               <div> <p> Nivel 1</p></div>
-              <input class="inputTela" type="text" placeholder="Titulo do nivel">
-              <input class="inputTela" type="text" placeholder="% de certo minima">
-              <input  class="inputTela" type="text" placeholder="URL da imagem do nivel">
-              <textarea class="inputTela3" type="text" placeholder="Descrição do nível"></textarea>
+              <input class="inputTela niv1" type="text" placeholder="Titulo do nivel">
+              <input class="inputTela niv2" type="text" placeholder="% de certo minima">
+              <input  class="inputTela niv3" type="text" placeholder="URL da imagem do nivel">
+              <textarea class="inputTela3 niv4" type="text" placeholder="Descrição do nível"></textarea>
 
-              <div class="inserir" ><p>pergunta 2</p>     </div>
+              <div class="inserir"  > <ul class="nivel">  </ul> <img onclick="abrirNivel2()" src="vector.png">   </div>
 
-              <div class='inserir'> <p> pergunta 3</p>   </div>
+              <div class="inserir"  > <ul class="nivel2">  </ul>  <img onclick="abrirNivel3()" src="vector.png">   </div>
 
-              <button onclick="tela33()" class="botaoTela31"> Finalizar Quizz</button>
+              <button onclick="tela34()" class="botaoTela31"> Finalizar Quizz</button>
           </div>
         </div>
 
       </div>
       <div class="tela34 esconderTela">
-        <div class="tela344">
-          <div class="textoTela3"> <strong> <h1> Seu quiz está pronto</h1> </strong></div>
-          <img>
-          <button class="botaoTela31"> Acessar Quizz</button>
-          <div><p>Voltar pra home</p></div>
+        <ul class="fim">
 
-
-        </div>
+        </ul>
 
       </div>
     </main>
