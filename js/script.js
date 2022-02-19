@@ -141,15 +141,15 @@ function obterQuizzes() {
     }if(tituloQuizz.length < 20){
       alert('Titulo deve ter no mínimo 20 caracteres')
     }
-    if(quantidadePerguntas >3){
+    if(quantidadePerguntas <3){
       alert('quantidade de perguntas: no mínimo 3 perguntas')
     }
-    if(quantidadeNiveis >2){
+    if(quantidadeNiveis <2){
       alert('Quantidade de níveis: no mínimo 2 níveis')
     }
     console.log(quantidadeNiveis <=2)
     console.log(quantidadeNiveis)
-    if(tituloQuizz !=='' && url !=='' && quantidadePerguntas !=='' && quantidadeNiveis !=='' && 65>=tituloQuizz.length && tituloQuizz.length >=20 && quantidadePerguntas <=3 && quantidadeNiveis <=2){
+    if(tituloQuizz !=='' && url !=='' && quantidadePerguntas !=='' && quantidadeNiveis !=='' && 65>=tituloQuizz.length && tituloQuizz.length >=20 && quantidadePerguntas >=3 && quantidadeNiveis >=2){
       const tela3 = document.querySelector('.tela3')
       tela3.classList.add('esconderTela')
       const tela32 = document.querySelector('.tela32 ')
@@ -170,29 +170,7 @@ function obterQuizzes() {
   respostaErrada3=document.querySelector('.perg9').value
   urlimg3=document.querySelector('.perg10').value
   
-  textoPergunta2=document.querySelector('.pergg1').value
-  corFundo2=document.querySelector('.pergg2').value
-  respostaCorreta2=document.querySelector('.pergg3').value
-  urlimgg=document.querySelector('.pergg4').value
-  respostaErrada11=document.querySelector('.pergg5').value
-  urlimg11=document.querySelector('.pergg6').value
-  respostaErrada22=document.querySelector('.pergg7').value
-  urlimg22=document.querySelector('.pergg8').value
-  respostaErrada33=document.querySelector('.pergg9').value
-  urlimg33=document.querySelector('.pergg10').value
-
-  textoPergunta3=document.querySelector('.perggg1').value
-  corFundo3=document.querySelector('.perggg2').value
-  respostaCorreta3=document.querySelector('.perggg3').value
-  urlimggg=document.querySelector('.perggg4').value
-  respostaErrada111=document.querySelector('.perggg5').value
-  urlimg111=document.querySelector('.perggg6').value
-  respostaErrada222=document.querySelector('.perggg7').value
-  urlimg222=document.querySelector('.perggg8').value
-  respostaErrada333=document.querySelector('.perggg9').value
-  urlimg333=document.querySelector('.perggg10').value
   
-
   const tela32 = document.querySelector('.tela32 ')
   tela32.classList.add('esconderTela')
   const tela33 = document.querySelector('.tela33 ')
@@ -208,6 +186,16 @@ ul4.innerHTML='nivel1'
 ul5.innerHTML='nivel2'
 
 function abrirPerg2(){
+  textoPergunta2=document.querySelector('.pergg1').value
+  corFundo2=document.querySelector('.pergg2').value
+  respostaCorreta2=document.querySelector('.pergg3').value
+  urlimgg=document.querySelector('.pergg4').value
+  respostaErrada11=document.querySelector('.pergg5').value
+  urlimg11=document.querySelector('.pergg6').value
+  respostaErrada22=document.querySelector('.pergg7').value
+  urlimg22=document.querySelector('.pergg8').value
+  respostaErrada33=document.querySelector('.pergg9').value
+  urlimg33=document.querySelector('.pergg10').value
   
   ul.innerHTML =`<div class="textoTitulo"> <p> pergunta 2</p></div>
   <input class="inputTela pergg1" type="text" placeholder="Texto da pergunta">
@@ -226,6 +214,16 @@ function abrirPerg2(){
   <input class="inputTela pergg10" type="text" placeholder="URL da imagems 3">`
 }
 function abrirPerg3(){
+  textoPergunta3=document.querySelector('.perggg1').value
+  corFundo3=document.querySelector('.perggg2').value
+  respostaCorreta3=document.querySelector('.perggg3').value
+  urlimggg=document.querySelector('.perggg4').value
+  respostaErrada111=document.querySelector('.perggg5').value
+  urlimg111=document.querySelector('.perggg6').value
+  respostaErrada222=document.querySelector('.perggg7').value
+  urlimg222=document.querySelector('.perggg8').value
+  respostaErrada333=document.querySelector('.perggg9').value
+  urlimg333=document.querySelector('.perggg10').value
   
   ul3.innerHTML =`<div class="textoTitulo"> <p> pergunta 3</p></div>
   <input class="inputTela perggg1" type="text" placeholder="Texto da pergunta">
@@ -244,6 +242,10 @@ function abrirPerg3(){
   <input class="inputTela perggg10" type="text" placeholder="URL da imagems 3">`
 }
 function abrirNivel2(){
+  tituloNivel2=document.querySelector('.nivv1').value
+  acertoMinimo2=document.querySelector('.nivv2').value
+  urlNivel2=document.querySelector('.nivv3').value
+  descricaoNive2=document.querySelector('.nivv4').value
   ul4.innerHTML=`<div> <p> Nivel 2</p></div>
   <input class="inputTela nivv1" type="text" placeholder="Titulo do nivel">
   <input class="inputTela nivv2" type="text" placeholder="% de certo minima">
@@ -252,6 +254,10 @@ function abrirNivel2(){
 
 }
 function abrirNivel3(){
+  tituloNivel3=document.querySelector('.nivvv1').value
+  acertoMinimo3=document.querySelector('.nivvv2').value
+  urlNivel3=document.querySelector('.nivvv3').value
+  descricaoNive3=document.querySelector('.nivvv4').value
   ul5.innerHTML=`<div> <p> Nivel 3</p></div>
   <input class="inputTela nivvv1" type="text" placeholder="Titulo do nivel">
   <input class="inputTela nivvv2" type="text" placeholder="% de certo minima">
@@ -273,15 +279,7 @@ function tela34(){
   urlNivel=document.querySelector('.niv3').value
   descricaoNive=document.querySelector('.niv4').value
 
-  tituloNivel2=document.querySelector('.nivv1').value
-  acertoMinimo2=document.querySelector('.nivv2').value
-  urlNivel2=document.querySelector('.nivv3').value
-  descricaoNive2=document.querySelector('.nivv4').value
-
-  tituloNivel3=document.querySelector('.nivvv1').value
-  acertoMinimo3=document.querySelector('.nivvv2').value
-  urlNivel3=document.querySelector('.nivvv3').value
-  descricaoNive3=document.querySelector('.nivvv4').value
+ 
   const tela32 = document.querySelector('.tela33 ')
   tela32.classList.add('esconderTela')
   const tela33 = document.querySelector('.tela34 ')
