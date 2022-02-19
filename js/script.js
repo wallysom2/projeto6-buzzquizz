@@ -65,22 +65,7 @@ function obterQuizzes() {
       alert("Xiii! Deu ruim na hora de receber mensagens!");
     })
   }
-  
     
-    function obterQuizzes1() {
-    const promise = axios.get(`${QUIZZ_API}`);
-    promise.then(resposta => {
-      console.log(resposta.data);
-      renderizarQuizzes1(resposta.data);
-    });
-    promise.catch( erro => {
-      console.error(erro.response);
-      alert("Xiii! Deu ruim na hora de receber mensagens!");
-    })
-  }
-
-
-  
   function renderizarQuizzes(quizzes) {
     const mostrarQuizz = document.querySelector(".corpo-quizzes");
     mostrarQuizz.innerHTML = "";
@@ -96,26 +81,58 @@ function obterQuizzes() {
           <p class="texto-quizz">${titulo}</p>
         </div>
           `
-
     }) }
 
-    function renderizarQuizzes1 (quizzes) {
-      const mostrarQuizz = document.querySelector(".quizz-aberto");
-      mostrarQuizz.innerHTML = "";
-      quizzes.forEach( quizz => {
-          const id = quizz.id;
-          const titulo = quizz.title;
-          const imagem = quizz.image;
+    function obterQuizzAberto (){
+      const promise = axios.get("https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/5441");
+      promise.then(resposta => {
+        console.log(resposta.data);
+        const titulo = resposta.data.title
+        console.log (titulo)
+        mostrarQuizzAberto (resposta.data)
+        
+      });
+      promise.catch( erro => {
+        console.error(erro.response);
+        alert("Xiii! Deu ruim na hora de receber mensagens!");
+      })
+    }
+
+    function mostrarQuizzAberto (quizz){
       
-     
-          mostrarQuizz.innerHTML +=  `
-          <div onclick="tela1()" class="container-quizz">
-            <img class="imagem-quizz" src="${imagem}">
-            <p class="texto-quizz">${titulo}</p>
-          </div>
-            `
-  
-      }) } 
+      const mostrarQuizzAberto = document.querySelector (".titulo-quizz")
+      mostrarQuizzAberto.innerHTML = `<h2><span>${quizz.title}</span></h2>`
+      const mostrarPerguntas =document.querySelector (".perguntas")
+      const quantPerguntas = quizz.questions.length;
+      mostrarPerguntas.innerHTML =""
+      for (let i =0; i <quantPerguntas; i++){
+        mostrarPerguntas.innerHTML += `
+        <article data-identifier="question" class="pergunta">
+        <div class="titulo-pergunta">
+            <h3>${quizz.questions[i].title}</h3>
+        </div>
+        <div class="bloco-respostas">
+            <div data-identifier="answer" class="resposta">
+                <img src="${quizz.questions[i].answers}" alt="">
+                <span>resposta 1</span>
+            </div>
+            <div data-identifier="answer" class="resposta">
+                <img src="css/gato.jpg" alt="">
+                <span>resposta 2</span>
+            </div>
+            <div data-identifier="answer" class="resposta">
+                <img src="css/gato.jpg" alt="">
+                <span>resposta 3</span>
+            </div>
+            <div data-identifier="answer" class="resposta">
+                <img src="css/gato.jpg" alt="">
+                <span>resposta 4</span>
+            </div>
+        </div>
+    </article>`
+      }
+
+    }
       
     function tela2(){
     const tela1 = document.querySelector('.tela1')
@@ -374,3 +391,4 @@ function tela34(){
     }) }
 
     obterQuizzes();
+    obterQuizzAberto ();
