@@ -264,6 +264,12 @@ function abrirNivel3(){
   <input  class="inputTela nivvv3" type="text" placeholder="URL da imagem do nivel">
   <textarea class="inputTela3 nivvv4" type="text" placeholder="Descrição do nível"></textarea>`
 
+}function voltarHome(){
+  const tela34 = document.querySelector('.tela34 ')
+  tela34.classList.add('esconderTela')
+  const tela1 = document.querySelector('.tela1')
+  tela1.classList.remove('esconderTela')
+ 
 }
 function tela34(){
  
@@ -272,7 +278,7 @@ function tela34(){
   <div class="textoTela3"> <strong> <h1> Seu quiz está pronto</h1> </strong></div>
   <img src="${url}">
   <button class="botaoTela31"> Acessar Quizz</button>
-  <div><p>Voltar pra home</p></div>
+  <div  onclick='voltarHome()'><p>Voltar pra home</p></div>
 </div>`
   tituloNivel=document.querySelector('.niv1').value
   acertoMinimo=document.querySelector('.niv2').value
@@ -287,51 +293,51 @@ function tela34(){
   const promise = axios.post(`${QUIZZ_API}/quizzes`,{
     title: tituloQuizz,
     image: url,
-    questions:[
+    questions: [
       {
-        title: textoPergunta,
-        color: corFundo,
+        title: "Título da pergunta 1",
+        color: "#123456",
         answers: [
           {
-            text: respostaCorreta,
-            image: urlimg,
+            text: "Texto da resposta 1",
+            image: "https://http.cat/411.jpg",
             isCorrectAnswer: true
           },
           {
-            text: respostaErrada1,
-            image: urlimg1,
+            text: "Texto da resposta 2",
+            image: "https://http.cat/412.jpg",
             isCorrectAnswer: false
           }
         ]
       },
       {
-        title: textoPergunta2,
-        color: corFundo2,
+        title: "Título da pergunta 2",
+        color: "#123456",
         answers: [
           {
-            text: respostaCorreta2,
-            image: urlimgg,
+            text: "Texto da resposta 1",
+            image: "https://http.cat/411.jpg",
             isCorrectAnswer: true
           },
           {
-            text: respostaErrada2,
-            image:   urlimg2,
+            text: "Texto da resposta 2",
+            image: "https://http.cat/412.jpg",
             isCorrectAnswer: false
           }
         ]
       },
       {
-        title: textoPergunta3,
-        color: corFundo3,
+        title: "Título da pergunta 3",
+        color: "#123456",
         answers: [
           {
-            text: respostaCorreta3,
-            image: urlimggg,
+            text: "Texto da resposta 1",
+            image: "https://http.cat/411.jpg",
             isCorrectAnswer: true
           },
           {
-            text:  respostaErrada3,
-            image: urlimg3,
+            text: "Texto da resposta 2",
+            image: "https://http.cat/412.jpg",
             isCorrectAnswer: false
           }
         ]
@@ -339,20 +345,20 @@ function tela34(){
     ],
     levels: [
       {
-        title: tituloNivel,
-        image: urlNivel,
-        text: descricaoNive,
+        title: "Título do nível 1",
+        image: "https://http.cat/411.jpg",
+        text: "Descrição do nível 1",
         minValue: 0
       },
       {
-        title: tituloNivel2,
-        image:urlNivel,
-        text: descricaoNive,
+        title: "Título do nível 2",
+        image: "https://http.cat/412.jpg",
+        text: "Descrição do nível 2",
         minValue: 50
       }
     ]
   });
-  promise.then
+  
 }
   
   function renderizarQuizzes(quizzes) {
