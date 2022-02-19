@@ -15,42 +15,42 @@ let urlimg2
 let respostaErrada3
 let urlimg3
 
-let textoPergunta2
-let corFundo2
-let respostaCorreta2
-let urlimgg
-let respostaErrada11
-let urlimg11
-let respostaErrada22
-let urlimg22
-let respostaErrada33
-let urlimg33
+//let textoPergunta2
+//let corFundo2
+//let respostaCorreta2
+//let urlimgg
+//let respostaErrada11
+//let urlimg11
+//let respostaErrada22
+//let urlimg22
+//let respostaErrada33
+//let urlimg33
 
-let textoPergunta3
-let corFundo3
-let respostaCorreta3
-let urlimggg
-let respostaErrada111
-let urlimg111
-let respostaErrada222
-let urlimg222
-let respostaErrada333
-let urlimg333
+//let textoPergunta3
+//let corFundo3
+//let respostaCorreta3
+//let urlimggg
+//let respostaErrada111
+//let urlimg111
+//let respostaErrada222
+//let urlimg222
+//let respostaErrada333
+//let urlimg333
 
 let tituloNivel
 let acertoMinimo
-let urlNivel
+let urlNivela
 let descricaoNivel
 
-let tituloNivel2
-let acertoMinimo2
-let urlNivel2
-let descricaoNivel2
+//let tituloNivel2
+//let acertoMinimo2
+//let urlNivel2
+//let descricaoNivel2
 
-let tituloNivel3
-let acertoMinimo3
-let urlNivel3
-let descricaoNivel3
+//let tituloNivel3
+//let acertoMinimo3
+//let urlNivel3
+//let descricaoNivel3
 
 
    
