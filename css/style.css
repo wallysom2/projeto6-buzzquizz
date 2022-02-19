@@ -258,13 +258,15 @@ header {
   margin-bottom: 15px;
   margin-top: 15px;
 }
+
 .inserir{
- 
+  
   margin-top:10px;
   margin-bottom: 10px;
   background: #EC362D;
   display: flex;
   align-items:center;
+ 
 
  
 }

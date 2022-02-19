@@ -176,28 +176,19 @@ function obterQuizzes() {
   const tela33 = document.querySelector('.tela33 ')
   tela33.classList.remove('esconderTela')
 }
-let ul = document.querySelector(".pergunta2");
+let ul = document.querySelector(".inserir");
 let ul3 = document.querySelector(".pergunta3");
 let ul4 = document.querySelector(".nivel");
 let ul5 = document.querySelector(".nivel2");
-ul.innerHTML='pergunta 2'
+ul.innerHTML='<p> pergunta 2</p>  <img class="imgLapis" onclick="abrirPerg2()" src="vector.png">'
 ul3.innerHTML='pergunta 3'
 ul4.innerHTML='nivel1'
 ul5.innerHTML='nivel2'
 
 function abrirPerg2(){
-  textoPergunta2=document.querySelector('.pergg1').value
-  corFundo2=document.querySelector('.pergg2').value
-  respostaCorreta2=document.querySelector('.pergg3').value
-  urlimgg=document.querySelector('.pergg4').value
-  respostaErrada11=document.querySelector('.pergg5').value
-  urlimg11=document.querySelector('.pergg6').value
-  respostaErrada22=document.querySelector('.pergg7').value
-  urlimg22=document.querySelector('.pergg8').value
-  respostaErrada33=document.querySelector('.pergg9').value
-  urlimg33=document.querySelector('.pergg10').value
   
-  ul.innerHTML =`<div class="textoTitulo"> <p> pergunta 2</p></div>
+  ul.innerHTML =`<div class="corinput2">
+  <div class="textoTitulo"> <p> pergunta 2</p></div>
   <input class="inputTela pergg1" type="text" placeholder="Texto da pergunta">
   <input class="inputTela pergg2" type="text" placeholder="Cor de fundo da pergunta">
   <div class="textoTitulo"> <p> Resposta correta</p></div>
@@ -211,19 +202,21 @@ function abrirPerg2(){
   <input class="inputTela2 pergg8" type="text" placeholder="URL da imagems 2">
 
   <input  class="inputTela pergg9" type="text" placeholder="Resposta incorreta 3">
-  <input class="inputTela pergg10" type="text" placeholder="URL da imagems 3">`
+  <input class="inputTela pergg10" type="text" placeholder="URL da imagems 3">
+</div>`
+  textoPergunta2=document.querySelector('.pergg1').value
+  corFundo2=document.querySelector('.pergg2').value
+  respostaCorreta2=document.querySelector('.pergg3').value
+  urlimgg=document.querySelector('.pergg4').value
+  respostaErrada11=document.querySelector('.pergg5').value
+  urlimg11=document.querySelector('.pergg6').value
+  respostaErrada22=document.querySelector('.pergg7').value
+  urlimg22=document.querySelector('.pergg8').value
+  respostaErrada33=document.querySelector('.pergg9').value
+  urlimg33=document.querySelector('.pergg10').value
 }
 function abrirPerg3(){
-  textoPergunta3=document.querySelector('.perggg1').value
-  corFundo3=document.querySelector('.perggg2').value
-  respostaCorreta3=document.querySelector('.perggg3').value
-  urlimggg=document.querySelector('.perggg4').value
-  respostaErrada111=document.querySelector('.perggg5').value
-  urlimg111=document.querySelector('.perggg6').value
-  respostaErrada222=document.querySelector('.perggg7').value
-  urlimg222=document.querySelector('.perggg8').value
-  respostaErrada333=document.querySelector('.perggg9').value
-  urlimg333=document.querySelector('.perggg10').value
+ 
   
   ul3.innerHTML =`<div class="textoTitulo"> <p> pergunta 3</p></div>
   <input class="inputTela perggg1" type="text" placeholder="Texto da pergunta">
@@ -240,6 +233,16 @@ function abrirPerg3(){
 
   <input  class="inputTela perggg9" type="text" placeholder="Resposta incorreta 3">
   <input class="inputTela perggg10" type="text" placeholder="URL da imagems 3">`
+  textoPergunta3=document.querySelector('.perggg1').value
+  corFundo3=document.querySelector('.perggg2').value
+  respostaCorreta3=document.querySelector('.perggg3').value
+  urlimggg=document.querySelector('.perggg4').value
+  respostaErrada111=document.querySelector('.perggg5').value
+  urlimg111=document.querySelector('.perggg6').value
+  respostaErrada222=document.querySelector('.perggg7').value
+  urlimg222=document.querySelector('.perggg8').value
+  respostaErrada333=document.querySelector('.perggg9').value
+  urlimg333=document.querySelector('.perggg10').value
 }
 function abrirNivel2(){
   tituloNivel2=document.querySelector('.nivv1').value
