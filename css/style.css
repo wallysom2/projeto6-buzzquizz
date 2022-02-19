@@ -202,8 +202,8 @@ header {
   
 }
 .corpoTela33{
-  background: green;
-  width:340px;
+  background: rgb(233, 233, 233);
+  width:440px;
   
   display: flex;
   flex-direction: column;
@@ -265,7 +265,7 @@ header {
   background: #EC362D;
   display: flex;
   align-items:center;
-  
+
  
 }
 .inserir2{
