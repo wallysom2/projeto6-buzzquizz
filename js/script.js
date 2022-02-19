@@ -180,7 +180,7 @@ let ul = document.querySelector(".inserir");
 let ul3 = document.querySelector(".pergunta3");
 let ul4 = document.querySelector(".nivel");
 let ul5 = document.querySelector(".nivel2");
-ul.innerHTML='<p> pergunta 2</p>  <img class="imgLapis" onclick="abrirPerg2()" src="vector.png">'
+ul.innerHTML='<p> pergunta 2</p>  <img class="imgLapis"  src="vector.png">'
 ul3.innerHTML='pergunta 3'
 ul4.innerHTML='nivel1'
 ul5.innerHTML='nivel2'
@@ -298,44 +298,44 @@ function tela34(){
     image: url,
     questions: [
       {
-        title: "Título da pergunta 1",
+        title: textoPergunta,
         color: "#123456",
         answers: [
           {
-            text: "Texto da resposta 1",
-            image: "https://http.cat/411.jpg",
+            text:respostaCorreta ,
+            image: urlimg,
             isCorrectAnswer: true
           },
           {
-            text: "Texto da resposta 2",
-            image: "https://http.cat/412.jpg",
+            text:respostaErrada1,
+            image: urlimg1,
             isCorrectAnswer: false
           }
         ]
       },
       {
-        title: "Título da pergunta 2",
+        title: respostaErrada2,
         color: "#123456",
         answers: [
           {
             text: "Texto da resposta 1",
-            image: "https://http.cat/411.jpg",
+            image: urlimg2,
             isCorrectAnswer: true
           },
           {
             text: "Texto da resposta 2",
-            image: "https://http.cat/412.jpg",
+            image: urlimg3,
             isCorrectAnswer: false
           }
         ]
       },
       {
-        title: "Título da pergunta 3",
+        title: respostaErrada3,
         color: "#123456",
         answers: [
           {
             text: "Texto da resposta 1",
-            image: "https://http.cat/411.jpg",
+            image: urlimg1,
             isCorrectAnswer: true
           },
           {
@@ -357,7 +357,7 @@ function tela34(){
         title: "Título do nível 2",
         image: "https://http.cat/412.jpg",
         text: "Descrição do nível 2",
-        minValue: 50
+        minValue: acertoMinimo
       }
     ]
   });
