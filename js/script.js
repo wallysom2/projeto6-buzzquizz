@@ -84,12 +84,13 @@ function obterQuizzes() {
     }) }
 
     function obterQuizzAberto (){
-      const promise = axios.get("https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/5441");
+      const promise = axios.get("https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/1");
       promise.then(resposta => {
         console.log(resposta.data);
         const titulo = resposta.data.title
         console.log (titulo)
         mostrarQuizzAberto (resposta.data)
+        mostrarAlternativas (resposta.data)
         
       });
       promise.catch( erro => {
@@ -100,11 +101,16 @@ function obterQuizzes() {
 
     function mostrarQuizzAberto (quizz){
       
+
       const mostrarQuizzAberto = document.querySelector (".titulo-quizz")
-      mostrarQuizzAberto.innerHTML = `<h2><span>${quizz.title}</span></h2>`
-      const mostrarPerguntas =document.querySelector (".perguntas")
+      mostrarQuizzAberto.innerHTML = 
+      ` <img class="imagem-capa" src="${quizz.image}" alt="Imagem do quizz">
+      <h2><span>${quizz.title}</span></h2>
+      `
+
+      const mostrarPerguntas =document.querySelector (".mostrarQuizz")
       const quantPerguntas = quizz.questions.length;
-      mostrarPerguntas.innerHTML =""
+      
       for (let i =0; i <quantPerguntas; i++){
         mostrarPerguntas.innerHTML += `
         <article data-identifier="question" class="pergunta">
@@ -112,27 +118,30 @@ function obterQuizzes() {
             <h3>${quizz.questions[i].title}</h3>
         </div>
         <div class="bloco-respostas">
-            <div data-identifier="answer" class="resposta">
-                <img src="${quizz.questions[i].answers}" alt="">
-                <span>resposta 1</span>
-            </div>
-            <div data-identifier="answer" class="resposta">
-                <img src="css/gato.jpg" alt="">
-                <span>resposta 2</span>
-            </div>
-            <div data-identifier="answer" class="resposta">
-                <img src="css/gato.jpg" alt="">
-                <span>resposta 3</span>
-            </div>
-            <div data-identifier="answer" class="resposta">
-                <img src="css/gato.jpg" alt="">
-                <span>resposta 4</span>
-            </div>
-        </div>
+        <div class="alternativas">`
+            for (let j = 0; j <quizz.questions[i].answers.length;j++){
+              `<div data-identifier="answer" class="resposta">
+                    <img src="${quizz.questions[i].answers[j].image}" alt="">
+                    <span>${quizz.questions[i].answers[j].text}</span>
+                </div>}`}
+       ` </div>
+        
     </article>`
       }
 
     }
+    /*function mostrarAlternativas (quizz){
+      let alternativas = document.querySelector (".exibirAlternativas")     
+      for (let j = 0 ; j < quizz.questions[i].answers[j].length; j++){
+        alternativas.innerHTML += 
+        `<div data-identifier="answer" class="resposta">
+                <img src="${quizz.questions[i].answers[j].image}" alt="">
+                <span>${quizz.questions[i].answers[j].text}</span>
+            </div>
+        `
+      }
+
+    }*/
       
     function tela2(id){
     const tela1 = document.querySelector('.tela1')
@@ -147,101 +156,9 @@ function obterQuizzes() {
     function pagggg2(pegar){
       console.log(pegar)
     let ul = document.querySelector(".tela2");
-    ul.innerHTML=`   <main class="pagina-quizz">
-    <section class="titulo-quizz">
-        <h2><span>O quão Potterhead você é?</span></h2>
-    </section>
-    <section class="perguntas">
-        <article data-identifier="question" class="pergunta">
-            <div class="titulo-pergunta">
-                <h3>Sua pergunta?</h3>
-            </div>
-            <div class="bloco-respostas">
-                <div data-identifier="answer" class="resposta">
-                    <img src="${pegar.data.image}" alt="">
-                    <span>resposta 1</span>
-                </div>
-                <div data-identifier="answer" class="resposta">
-                    <img src="${pegar.data.image}" alt="">
-                    <span>resposta 2</span>
-                </div>
-                <div data-identifier="answer" class="resposta">
-                    <img src="${pegar.data.image}" alt="">
-                    <span>resposta 3</span>
-                </div>
-                <div data-identifier="answer" class="resposta">
-                    <img src="${pegar.data.image}" alt="">
-                    <span>resposta 4</span>
-                </div>
-            </div>
-        </article>
-        <article data-identifier="question" class="pergunta">
-            <div class="titulo-pergunta">
-                <h3>Sua pergunta 2?</h3>
-            </div>
-            <div class="bloco-respostas">
-                <div data-identifier="answer" class="resposta">
-                    <img src="css/gato.jpg" alt="">
-                    <span>resposta 1</span>
-                </div>
-                <div data-identifier="answer" class="resposta">
-                    <img src="css/gato.jpg" alt="">
-                    <span>resposta 2</span>
-                </div>
-                <div data-identifier="answer" class="resposta">
-                    <img src="css/gato.jpg" alt="">
-                    <span>resposta 3</span>
-                </div>
-                <div data-identifier="answer" class="resposta">
-                    <img src="css/gato.jpg" alt="">
-                    <span>resposta 4</span>
-                </div>
-            </div>
-        </article>
-        <article data-identifier="question" class="pergunta">
-            <div class="titulo-pergunta">
-                <h3>Sua pergunta 3?</h3>
-            </div>
-            <div class="bloco-respostas">
-                <div data-identifier="answer" class="resposta">
-                    <img src="css/gato.jpg" alt="">
-                    <span>resposta 1</span>
-                </div>
-                <div data-identifier="answer" class="resposta">
-                    <img src="css/gato.jpg" alt="">
-                    <span>resposta 2</span>
-                </div>
-                <div data-identifier="answer" class="resposta">
-                    <img src="css/gato.jpg" alt="">
-                    <span>resposta 3</span>
-                </div>
-                <div data-identifier="answer" class="resposta">
-                    <img src="css/gato.jpg" alt="">
-                    <span>resposta 4</span>
-                </div>
-            </div>
-        </article>        
-    </section>
-    <section>
-      <article data-identifier="quizz-result" class="resultado">
-        <div class="titulo-resultado">
-            <h3>88% de acerto: Você é praticamente um aluno de Hogwarts! </h3>
-        </div>
-        <div class="conteudo-reultado">
-            <img src="css/gato.jpg" alt="Imagem do resultado">
-            <span>Parabéns você terminou o quizz se quiser refazer clique no botão abaixo.</span>
-        </div>
-    </article>
-    <button class="reiniciar-quizz">
-        <p>Reiniciar Quizz</p>
-    </button>
-    <p class="voltar-inicio">Voltar pra home</p>
-    </section>
-</main>
-
-      </div>`
-
+  
   }
+
   function tela3(){
     const tela1 = document.querySelector('.tela1')
     tela1.classList.add('esconderTela')
