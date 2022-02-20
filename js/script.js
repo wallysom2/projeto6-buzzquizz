@@ -134,11 +134,113 @@ function obterQuizzes() {
 
     }
       
-    function tela2(){
+    function tela2(id){
     const tela1 = document.querySelector('.tela1')
     tela1.classList.add('esconderTela')
     const tela2 = document.querySelector('.tela2')
     tela2.classList.remove('esconderTela')
+
+    const promise = axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/'+id)
+    promise.then(pagggg2)
+    
+    }
+    function pagggg2(pegar){
+      console.log(pegar)
+    let ul = document.querySelector(".tela2");
+    ul.innerHTML=`   <main class="pagina-quizz">
+    <section class="titulo-quizz">
+        <h2><span>O quão Potterhead você é?</span></h2>
+    </section>
+    <section class="perguntas">
+        <article data-identifier="question" class="pergunta">
+            <div class="titulo-pergunta">
+                <h3>Sua pergunta?</h3>
+            </div>
+            <div class="bloco-respostas">
+                <div data-identifier="answer" class="resposta">
+                    <img src="${pegar.data.image}" alt="">
+                    <span>resposta 1</span>
+                </div>
+                <div data-identifier="answer" class="resposta">
+                    <img src="${pegar.data.image}" alt="">
+                    <span>resposta 2</span>
+                </div>
+                <div data-identifier="answer" class="resposta">
+                    <img src="${pegar.data.image}" alt="">
+                    <span>resposta 3</span>
+                </div>
+                <div data-identifier="answer" class="resposta">
+                    <img src="${pegar.data.image}" alt="">
+                    <span>resposta 4</span>
+                </div>
+            </div>
+        </article>
+        <article data-identifier="question" class="pergunta">
+            <div class="titulo-pergunta">
+                <h3>Sua pergunta 2?</h3>
+            </div>
+            <div class="bloco-respostas">
+                <div data-identifier="answer" class="resposta">
+                    <img src="css/gato.jpg" alt="">
+                    <span>resposta 1</span>
+                </div>
+                <div data-identifier="answer" class="resposta">
+                    <img src="css/gato.jpg" alt="">
+                    <span>resposta 2</span>
+                </div>
+                <div data-identifier="answer" class="resposta">
+                    <img src="css/gato.jpg" alt="">
+                    <span>resposta 3</span>
+                </div>
+                <div data-identifier="answer" class="resposta">
+                    <img src="css/gato.jpg" alt="">
+                    <span>resposta 4</span>
+                </div>
+            </div>
+        </article>
+        <article data-identifier="question" class="pergunta">
+            <div class="titulo-pergunta">
+                <h3>Sua pergunta 3?</h3>
+            </div>
+            <div class="bloco-respostas">
+                <div data-identifier="answer" class="resposta">
+                    <img src="css/gato.jpg" alt="">
+                    <span>resposta 1</span>
+                </div>
+                <div data-identifier="answer" class="resposta">
+                    <img src="css/gato.jpg" alt="">
+                    <span>resposta 2</span>
+                </div>
+                <div data-identifier="answer" class="resposta">
+                    <img src="css/gato.jpg" alt="">
+                    <span>resposta 3</span>
+                </div>
+                <div data-identifier="answer" class="resposta">
+                    <img src="css/gato.jpg" alt="">
+                    <span>resposta 4</span>
+                </div>
+            </div>
+        </article>        
+    </section>
+    <section>
+      <article data-identifier="quizz-result" class="resultado">
+        <div class="titulo-resultado">
+            <h3>88% de acerto: Você é praticamente um aluno de Hogwarts! </h3>
+        </div>
+        <div class="conteudo-reultado">
+            <img src="css/gato.jpg" alt="Imagem do resultado">
+            <span>Parabéns você terminou o quizz se quiser refazer clique no botão abaixo.</span>
+        </div>
+    </article>
+    <button class="reiniciar-quizz">
+        <p>Reiniciar Quizz</p>
+    </button>
+    <p class="voltar-inicio">Voltar pra home</p>
+    </section>
+</main>
+
+      </div>`
+
   }
   function tela3(){
     const tela1 = document.querySelector('.tela1')
@@ -388,10 +490,11 @@ function tela34(){
         const id = quizz.id;
         const titulo = quizz.title;
         const imagem = quizz.image;
+       
     
    
         mostrarQuizz.innerHTML +=  `
-        <div onclick="tela2()" class="container-quizz">
+        <div onclick="tela2('${id}')" class="container-quizz">
           <img class="imagem-quizz" src="${imagem}">
           <p class="texto-quizz">${titulo}</p>
         </div>
