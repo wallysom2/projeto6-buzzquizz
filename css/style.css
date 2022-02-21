@@ -27,51 +27,65 @@ header {
   color: white;
   font-style: normal;
 }
-  
-.caixa-criar-quizz {
-  width: 340px;
-  height: 181px;
-  margin: auto;
-  margin-top: 100px;
-  background-color: #FAFAFA;
-  border: 1px dashed #D5D5D5;
-  border-radius: 5px;
-}
-.caixa-texto{
-  width: 250px;
-  height: 107px;
-  margin: auto;
-  margin-top: 7px;
-  font-family: Roboto;
-  font-size: 20px;
-  color: #B9B9B9;
+.tela1{
+  max-width: 100%;
   display: flex;
   align-items: center;
-  text-align: center;
+  justify-items: center;
+  flex-direction: column;
+  padding-top: calc(69px + 31px);
 }
-.caixa-criar-quizz-botao{
+
+.tela1 .caixa-criar-quizz {
+  width: 340px;
+  height: 181px;
+  background: #FAFAFA;
+  border: 1px dashed #D5D5D5;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.tela1 .caixa-texto{
+  width: 70%;
+  height: 75px;
+  font-size: 20px;
+  line-height: 23px;
+  font-style: normal;
+  font-weight: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #B9B9B9;
+}
+.tela1 .caixa-criar-quizz-botao{
   width: 151px;
   height: 40px;
-  background: #FAFAFA;
-  border: 1px dashed #EC362D;
-  box-sizing: border-box;
   border-radius: 50px;
-  align-items: center;
-  margin-bottom: 33px;
-  margin-left: 95px;
-  font-family: Roboto;
   font-size: 21px;
   line-height: 25px;
+  font-style: normal;
+  font-weight: normal;
+  background: #FAFAFA;
+  border: 1px dashed #EC362D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   color: #EC362D;
 }
-.todos-quizz {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: bold;
+.tela1 .todos-quizz {
+  height: 23px;
+  width: auto;
+  padding-bottom: 12px;
   font-size: 20px;
-  color: #000000;
-  margin-top: 35px;
-  margin-left: 18px;
+  font-weight: 700;
+  line-height: 23px;
+  letter-spacing: 0em;
+  font-style: normal;
+  text-align: center;
 }
 
 
@@ -125,7 +139,7 @@ header {
     display: none;
 }
 .tela2{
-  margin-top: 85px;
+  margin-top: 69px;
 
 }
 
