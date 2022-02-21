@@ -146,16 +146,16 @@ function obterQuizzes() {
     promise.then(pag2)
     
     }
-    function tela22(id){
-      const tela1 = document.querySelector('.tela1')
-      tela1.classList.add('esconderTela')
-      const tela2 = document.querySelector('.tela34')
-      tela2.classList.remove('esconderTela')
-  
-      const promise = axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/'+id)
-      promise.then(pag2)
-      
-      }
+    function tela2(id){
+    const tela1 = document.querySelector('.tela1')
+    tela1.classList.add('esconderTela')
+    const tela2 = document.querySelector('.tela2')
+    tela2.classList.remove('esconderTela')
+
+    const promise = axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/'+id)
+    promise.then(pag2)
+    
+    }
     let seuId
     function pag2(pegar){
       console.log(pegar)

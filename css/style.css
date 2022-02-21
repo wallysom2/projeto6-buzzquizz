@@ -38,7 +38,6 @@ header {
   right: 0; /* width: 100%; */
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   color: #FFFFFF;
-  line-height: 43px;
   position: fixed;
   z-index: 2;
 }
@@ -337,40 +336,35 @@ header {
 }
 
 
-
-
-.tela2 img {
-  width: 163px;
-  height: 113px;
-}
-
 .titulo-quizz {
-  width: 375px;
-  height: 142px; 
-  background-image: url("https://criticalhits.com.br/wp-content/uploads/2020/01/capa-22.jpg");
-  background-size: cover;
   margin: auto;
   display: flex;
   align-items: center;
   text-align: center;
+  flex-direction: column;
+  width: 370px;
+  height: 142px;
+  background-size: 100%;
+  object-fit: cover;
 
 }
-.titulo-quizz::after{
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://criticalhits.com.br/wp-content/uploads/2020/01/capa-22.jpg");
-}
+
 .titulo-quizz h2{
   font-family: Roboto;
   font-size: 19px;
   line-height: 22px;
   color: #FFFFFF;
   margin: auto;
+  position: absolute;
+  z-index: 1;
+  top: 140px;
+ 
 }
 .titulo-pergunta{
   width: 340px;
   height: 89px;
   left: 18px;
-  top: 253px;
-  background: #434CA0;
+  background: red;
   display: flex;
   align-items: center;
   text-align: center;
@@ -392,25 +386,33 @@ header {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  
 }
-.resposta{
-  margin: auto;
+.resposta {
+  width: 45%;
+  height: auto;
   display: flex;
   flex-direction: column;
-  margin-top: 18px;
 }
+.resposta img{
+  width: 100%;
+  height: 113px;
+}
+
 .resposta span {
-  font-family: Roboto;
+  width: 100%;
   font-style: normal;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 13px;
+  line-height: 15px;
   margin-top: 5px;
+  margin-bottom: 12px;
+  color: #000000;
+  overflow: hidden;
 }
+
 .titulo-resultado{
   width: 340px;
   height: 99px;
-  background: #EC362D;
   margin: auto;
   margin-top: 42px;
   display: flex;
@@ -468,8 +470,17 @@ margin: auto;
 margin-top: 15px;
 display: flex;
 justify-content: center;
-
 }
+
+.nop {
+  opacity: 0.3;
+}
+
+.errou {
+  color: red;
+}
+
+
 .amarrar{
   display: flex;
   flex-direction: column;
@@ -501,5 +512,8 @@ justify-content: center;
   }
   .amarrar{
     margin-left:630px;
+  }
+  .acertou {
+    color: green;
   }
 }
