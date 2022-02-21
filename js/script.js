@@ -83,8 +83,8 @@ function obterQuizzes() {
           `
     }) }
 
-    function obterQuizzAberto (){
-      const promise = axios.get("https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/994");
+    function obterQuizzAberto (idquizz){
+      const promise = axios.get(`https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/${idquizz}`);
       promise.then(resposta => {
         console.log(resposta.data);
         const titulo = resposta.data.title
@@ -240,15 +240,8 @@ function embaralha() {
     const tela2 = document.querySelector('.tela2')
     tela2.classList.remove('esconderTela')
 
-    const promise = axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/'+id)
-    promise.then(pagggg2)
-    
+    obterQuizzAberto (id)    
     }
-    function pagggg2(pegar){
-      console.log(pegar)
-    let ul = document.querySelector(".tela2");
-  
-  }
 
   function tela3(){
     const tela1 = document.querySelector('.tela1')
@@ -511,4 +504,4 @@ function tela34(){
     }) }
 
     obterQuizzes();
-    obterQuizzAberto();
+   
