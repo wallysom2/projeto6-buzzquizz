@@ -127,7 +127,7 @@ function obterQuizzes() {
               <img src="${quizz.questions[x].answers[y].image}" alt="">
               <h4>${quizz.questions[x].answers[y].text}</h4>
           </div> `
-        }}}
+        }}window.scrollTo(0, 0)}
 
    
  function quizzSelecionado(numerodaquestao, opcao) {
