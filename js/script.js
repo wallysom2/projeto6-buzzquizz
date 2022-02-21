@@ -96,9 +96,10 @@ function obterQuizzes() {
         alert("Xiii! Deu ruim na hora de receber mensagens!");
       })
     }
+  
 
     function mostrarQuizzAberto (quizz){
-    const quizzescolhido = quizz;
+    quizzescolhido = quizz;
     const titulo = document.querySelector(".pagina-quizz")
       titulo.innerHTML = `      
           <section class="titulo-quizz">
@@ -126,46 +127,48 @@ function obterQuizzes() {
               <img src="${quizz.questions[x].answers[y].image}" alt="">
               <h4>${quizz.questions[x].answers[y].text}</h4>
           </div> `
-        }
-      } window.scrollTo(0, 0)
-    }
+        }}}
+
+   
+ function quizzSelecionado(numerodaquestao, opcao) {
+  let escolha = document.querySelector(`.pergunta${numerodaquestao}${opcao}`);
+  escolha.classList.add("escolhida");
+  for (let z = 0; z < quizzescolhido.questions[numerodaquestao].answers.length; z++) {
+      let umaopcao = document.querySelector(`.pergunta${numerodaquestao}${z}`);
+      umaopcao.removeAttribute('onclick');
+      if (umaopcao != escolha) {
+          umaopcao.classList.add("nop");
+      }
+      if (umaopcao.classList.contains(false)) {
+          umaopcao.classList.add("errou");
+      } else {
+          umaopcao.classList.add("acertou");
+      }
+      let w = z + 1;
+      if (w < quizzescolhido.questions.length) {
+          setTimeout(() => {
+              let irpara = document.querySelector(`.pergunta${numerodaquestao}${z+1}`)
+              irpara.scrollIntoView()
+              if (questoesrespondidas == quizzescolhido.questions.length) {
+                  resultadoQuizz()
+              }
+          }, 2000);
+      }
+  }
+
+  if (escolha.classList.contains(true)) {
+      acertos += 1;
+      quantidadeAcertos()
+  }
+  questoesrespondidas += 1;
+  console.log(acertos)
+}
+ 
 
     let questoesrespondidas = 0;
     let acertos = 0;
 
-function quizzSelecionado(numerodaquestao, opcao) {
-    let escolha = document.querySelector(`.pergunta${numerodaquestao}${opcao}`);
-    escolha.classList.add("escolhida");
-    for (let z = 0; z < quizzescolhido.questions[numerodaquestao].answers.length; z++) {
-        let umaopcao = document.querySelector(`.pergunta${numerodaquestao}${z}`);
-        umaopcao.removeAttribute('onclick');
-        if (umaopcao != escolha) {
-            umaopcao.classList.add("nop");
-        }
-        if (umaopcao.classList.contains(false)) {
-            umaopcao.classList.add("errou");
-        } else {
-            umaopcao.classList.add("acertou");
-        }
-        let w = z + 1;
-        if (w < quizzescolhido.questions.length) {
-            setTimeout(() => {
-                let irpara = document.querySelector(`.pergunta${numerodaquestao}${z+1}`)
-                irpara.scrollIntoView()
-                if (questoesrespondidas == quizzescolhido.questions.length) {
-                    resultadoQuizz()
-                }
-            }, 2000);
-        }
-    }
 
-    if (escolha.classList.contains(true)) {
-        acertos += 1;
-        quantidadeAcertos()
-    }
-    questoesrespondidas += 1;
-    console.log(acertos)
-}
 
 let porcentagem = 0;
 let leveltotal = 0;
@@ -189,8 +192,8 @@ function quantidadeAcertos() {
 }
 
 function resultadoQuizz() {
-    let perguntas = document.querySelector(".fim");
-    perguntas.innerHTML = `
+    let perguntas = document.querySelector(".resusltadoQ");
+    perguntas.innerHTML += `
         <article class="resultado" data-identifier="quizz-result">
             <div class="titulo-resultado">
                 <h3>${porcentagemarredondada}% ${quizzescolhido.levels[u].title}</h3>
