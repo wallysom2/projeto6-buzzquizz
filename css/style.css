@@ -73,7 +73,12 @@ header {
   margin-top: 35px;
   margin-left: 18px;
 }
-
+.pagina-quizz {
+  background: #FAFAFA;
+  margin-top: 69px;
+  height: 100%;
+  width: 100%;
+}
 
 .container-quizz {
   position: relative;
@@ -109,6 +114,7 @@ header {
 .texto-quizz {
   position: absolute;
   font-size: 32px;
+  font-weight: 400;
   left: 16px;
   top: 150px;
   width: 301px;
@@ -153,7 +159,6 @@ header {
   justify-content: center;
   
 
-  background: blue;
 }
 .tela333{
   width:100vw;
@@ -287,27 +292,26 @@ header {
 
 
 .titulo-quizz {
-  margin: auto;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  flex-direction: column;
-  width: 370px;
+  width: 100%;
   height: 142px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../img/pandavermelho.jpg");
   background-size: 100%;
   object-fit: cover;
 
 }
 
 .titulo-quizz h2{
-  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
   font-size: 19px;
   line-height: 22px;
+  text-align: center;
   color: #FFFFFF;
-  margin: auto;
-  position: absolute;
-  z-index: 1;
-  top: 140px;
+  overflow: hidden;
  
 }
 .titulo-pergunta{
@@ -329,13 +333,15 @@ header {
   margin: auto;
 }
 .bloco-respostas{
-  width: 340px;
-  height: 300px;
-  margin: auto;
-  margin-top: 13px;
+  width: 330px;
+  height: 330px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: auto;
+  margin-top: 12px;
 }
 .resposta {
   width: 45%;
