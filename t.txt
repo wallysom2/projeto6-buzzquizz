@@ -91,3 +91,10 @@
 </main>
 
       </div>`
+
+       for (let j =0; j < quizz.questions[i].answers.length; j++){
+            document.querySelector (".bloco-respostas").innerHTML +=
+          `<div data-identifier="answer" class="conteudo-reultado">
+                <img src="${quizz.questions[i].answers[j].image}" alt="">
+                <span>${quizz.questions[i].answers[j].text}</span>
+            </div>}`

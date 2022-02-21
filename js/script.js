@@ -90,9 +90,7 @@ function obterQuizzes() {
         const titulo = resposta.data.title
         console.log (titulo)
         mostrarQuizzAberto (resposta.data)
-        mostrarAlternativas (resposta.data)
-        
-      });
+        });
       promise.catch( erro => {
         console.error(erro.response);
         alert("Xiii! Deu ruim na hora de receber mensagens!");
@@ -100,48 +98,56 @@ function obterQuizzes() {
     }
 
     function mostrarQuizzAberto (quizz){
-      
+    const quizzescolhido = quizz;
+    const titulo = document.querySelector(".pagina-quizz")
+      titulo.innerHTML = `      
+          <section class="titulo-quizz">
+              <h2> <span>${quizz.title}</span></h2>
+          </section>`
+     const umquizz = document.querySelector(".titulo-quizz");
+    
+      umquizz.style.backgroundImage = `linear-gradient(0deg, rgba(0, 0, 0, 0.57), rgba(0, 0, 0, 0.57)), url('${quizz.image}')`;
+      quizz.questions.sort(embaralha)
 
-      const mostrarQuizzAberto = document.querySelector (".titulo-quizz")
-      mostrarQuizzAberto.innerHTML = 
-      ` <img class="imagem-capa" src="${quizz.image}" alt="Imagem do quizz">
-      <h2><span>${quizz.title}</span></h2>
-      `
+      for (let x = 0; x < quizz.questions.length; x++) {
+        titulo.innerHTML += `
+            <section class="perguntas">
+                <article data-identifier="question" class="pergunta">
+                    <div class="titulo-pergunta" style="background-color: ${quizzescolhido.questions[x].color}">
+                        <h3>${quizz.questions[x].title}</h3>
+                    </div>
+                    <div class="bloco-respostas esse${x}"></div>
+                </article>
+            </section`
+        let classpergunta = document.querySelector(`.esse${x}`);
+        for (let y = 0; y < quizz.questions[x].answers.length; y++) {
+          classpergunta.innerHTML += `
+          <div data-identifier="answer" class="resposta pergunta${x}${y} ${quizz.questions[x].answers[y].isCorrectAnswer}" onclick="quizzSelecionado(${x},${y})">
+              <img src="${quizz.questions[x].answers[y].image}" alt="">
+              <h4>${quizz.questions[x].answers[y].text}</h4>
+          </div> `
+        }
+      }}
 
-      const mostrarPerguntas =document.querySelector (".mostrarQuizz")
-      const quantPerguntas = quizz.questions.length;
-      
-      for (let i =0; i <quantPerguntas; i++){
-        mostrarPerguntas.innerHTML += `
-        <article data-identifier="question" class="pergunta">
-        <div class="titulo-pergunta">
-            <h3>${quizz.questions[i].title}</h3>
-        </div>
-        <div class="bloco-respostas">
-        <div class="alternativas">`
-            for (let j = 0; j <quizz.questions[i].answers.length;j++){
-              `<div data-identifier="answer" class="resposta">
-                    <img src="${quizz.questions[i].answers[j].image}" alt="">
-                    <span>${quizz.questions[i].answers[j].text}</span>
-                </div>}`}
-       ` </div>
-        
-    </article>`
-      }
 
-    }
-    /*function mostrarAlternativas (quizz){
-      let alternativas = document.querySelector (".exibirAlternativas")     
-      for (let j = 0 ; j < quizz.questions[i].answers[j].length; j++){
-        alternativas.innerHTML += 
-        `<div data-identifier="answer" class="resposta">
-                <img src="${quizz.questions[i].answers[j].image}" alt="">
-                <span>${quizz.questions[i].answers[j].text}</span>
-            </div>
-        `
-      }
+function abrirQuizz(respostaquizz) {
+  quizzescolhido = respostaquizz.data;
+  titulo = document.querySelector(".pagina-quizz")
+  titulo.innerHTML = `      
+      <section class="titulo-quizz">
+          <h2> <span>${quizzescolhido.title}</span></h2>
+      </section>`
+  umquizz = document.querySelector(".titulo-quizz");
 
-    }*/
+  umquizz.style.backgroundImage = `linear-gradient(0deg, rgba(0, 0, 0, 0.57), rgba(0, 0, 0, 0.57)), url('${quizzescolhido.image}')`;
+  respostaquizz.questions.sort(embaralha)
+}
+
+
+
+function embaralha() {
+  return Math.random() - 0.5;
+}
       
     function tela2(id){
     const tela1 = document.querySelector('.tela1')
@@ -420,4 +426,4 @@ function tela34(){
     }) }
 
     obterQuizzes();
-    obterQuizzAberto ();
+    obterQuizzAberto();
