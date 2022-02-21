@@ -149,10 +149,10 @@ function obterQuizzes() {
           setTimeout(() => {
               let irpara = document.querySelector(`.pergunta${numerodaquestao}${z+1}`)
               irpara.scrollIntoView()
-              if (questoesrespondidas == quizzescolhido.questions.length) {
+              if (questoesrespondidas === quizzescolhido.questions.length) {
                   resultadoQuizz()
               }
-          }, 2000);
+          }, 500);
       }
   }
 
@@ -167,15 +167,12 @@ function obterQuizzes() {
 
     let questoesrespondidas = 0;
     let acertos = 0;
-
-
-
-let porcentagem = 0;
-let leveltotal = 0;
-let umacerto = 0;
-let porcentagemarredondada = 0;
-let numeronoarray = 0;
-let u = 0
+    let porcentagem = 0;
+    let leveltotal = 0;
+    let umacerto = 0;
+    let porcentagemarredondada = 0;
+    let numeronoarray = 0;
+    let u = 0
 
 function quantidadeAcertos() {
     for (u = 0; u < quizzescolhido.levels.length; u++) {
@@ -193,7 +190,7 @@ function quantidadeAcertos() {
 
 function resultadoQuizz() {
     let perguntas = document.querySelector(".resusltadoQ");
-    perguntas.innerHTML += `
+    perguntas.innerHTML = `
         <article class="resultado" data-identifier="quizz-result">
             <div class="titulo-resultado">
                 <h3>${porcentagemarredondada}% ${quizzescolhido.levels[u].title}</h3>
@@ -220,8 +217,8 @@ function paginaInicial() {
 }
 
 function reiniciarQuizz() {
-    getQuizz(identificador);
-    apagarresultado = document.querySelector(".fim");
+     mostrarQuizzAberto (quizzescolhido);
+    apagarresultado = document.querySelector(".resusltadoQ");
     apagarresultado.innerHTML = ""
 }
 
