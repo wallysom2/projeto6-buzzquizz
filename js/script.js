@@ -339,89 +339,8 @@ ul3.innerHTML='pergunta3'
 ul4.innerHTML='nivel1'
 ul5.innerHTML='nivel2'
 
-function abrirPerg2(){
-  
-  ul.innerHTML =`<div class="corinput2">
-  <div class="textoTitulo"> <p> pergunta 2</p></div>
-  <input class="inputTela pergg1" type="text" placeholder="Texto da pergunta">
-  <input class="inputTela pergg2" type="text" placeholder="Cor de fundo da pergunta">
-  <div class="textoTitulo"> <p> Resposta correta</p></div>
-  <input  class="inputTela pergg3" type="text" placeholder="Resposta correta">
-  <input class="inputTela pergg4" type="text" placeholder="URL da imagems">
-  <div class="textoTitulo"> <p> Resposta correta</p></div>
-  <input  class="inputTela pergg5" type="text" placeholder="Resposta incorreta 1">
-  <input class="inputTela2 pergg6" type="text" placeholder="URL da imagems 1">
 
-  <input  class="inputTela pergg7" type="text" placeholder="Resposta incorreta 2">
-  <input class="inputTela2 pergg8" type="text" placeholder="URL da imagems 2">
-
-  <input  class="inputTela pergg9" type="text" placeholder="Resposta incorreta 3">
-  <input class="inputTela pergg10" type="text" placeholder="URL da imagems 3">
-</div>`
-  textoPergunta2=document.querySelector('.pergg1').value
-  corFundo2=document.querySelector('.pergg2').value
-  respostaCorreta2=document.querySelector('.pergg3').value
-  urlimgg=document.querySelector('.pergg4').value
-  respostaErrada11=document.querySelector('.pergg5').value
-  urlimg11=document.querySelector('.pergg6').value
-  respostaErrada22=document.querySelector('.pergg7').value
-  urlimg22=document.querySelector('.pergg8').value
-  respostaErrada33=document.querySelector('.pergg9').value
-  urlimg33=document.querySelector('.pergg10').value
-}
-function abrirPerg3(){
- 
-  
-  ul3.innerHTML =`<div class="textoTitulo"> <p> pergunta 3</p></div>
-  <input class="inputTela perggg1" type="text" placeholder="Texto da pergunta">
-  <input class="inputTela perggg2" type="text" placeholder="Cor de fundo da pergunta">
-  <div class="textoTitulo"> <p> Resposta correta</p></div>
-  <input  class="inputTela perggg3" type="text" placeholder="Resposta correta">
-  <input class="inputTela perggg4" type="text" placeholder="URL da imagems">
-  <div class="textoTitulo"> <p> Resposta correta</p></div>
-  <input  class="inputTela perggg5" type="text" placeholder="Resposta incorreta 1">
-  <input class="inputTela2 perggg6" type="text" placeholder="URL da imagems 1">
-
-  <input  class="inputTela perggg7" type="text" placeholder="Resposta incorreta 2">
-  <input class="inputTela2 perggg8" type="text" placeholder="URL da imagems 2">
-
-  <input  class="inputTela perggg9" type="text" placeholder="Resposta incorreta 3">
-  <input class="inputTela perggg10" type="text" placeholder="URL da imagems 3">`
-  textoPergunta3=document.querySelector('.perggg1').value
-  corFundo3=document.querySelector('.perggg2').value
-  respostaCorreta3=document.querySelector('.perggg3').value
-  urlimggg=document.querySelector('.perggg4').value
-  respostaErrada111=document.querySelector('.perggg5').value
-  urlimg111=document.querySelector('.perggg6').value
-  respostaErrada222=document.querySelector('.perggg7').value
-  urlimg222=document.querySelector('.perggg8').value
-  respostaErrada333=document.querySelector('.perggg9').value
-  urlimg333=document.querySelector('.perggg10').value
-}
-function abrirNivel2(){
-  tituloNivel2=document.querySelector('.nivv1').value
-  acertoMinimo2=document.querySelector('.nivv2').value
-  urlNivel2=document.querySelector('.nivv3').value
-  descricaoNive2=document.querySelector('.nivv4').value
-  ul4.innerHTML=`<div> <p> Nivel 2</p></div>
-  <input class="inputTela nivv1" type="text" placeholder="Titulo do nivel">
-  <input class="inputTela nivv2" type="text" placeholder="% de certo minima">
-  <input  class="inputTela nivv3" type="text" placeholder="URL da imagem do nivel">
-  <textarea class="inputTela3 nivv4" type="text" placeholder="Descrição do nível"></textarea>`
-
-}
-function abrirNivel3(){
-  tituloNivel3=document.querySelector('.nivvv1').value
-  acertoMinimo3=document.querySelector('.nivvv2').value
-  urlNivel3=document.querySelector('.nivvv3').value
-  descricaoNive3=document.querySelector('.nivvv4').value
-  ul5.innerHTML=`<div> <p> Nivel 3</p></div>
-  <input class="inputTela nivvv1" type="text" placeholder="Titulo do nivel">
-  <input class="inputTela nivvv2" type="text" placeholder="% de certo minima">
-  <input  class="inputTela nivvv3" type="text" placeholder="URL da imagem do nivel">
-  <textarea class="inputTela3 nivvv4" type="text" placeholder="Descrição do nível"></textarea>`
-
-}function voltarHome(){
+function voltarHome(){
   const tela34 = document.querySelector('.tela34 ')
   tela34.classList.add('esconderTela')
   const tela1 = document.querySelector('.tela1')
@@ -431,7 +350,6 @@ function abrirNivel3(){
       <img class="imagem-quizz2" src="${url}">
       <p class="texto-quizz">dfg</p>
     </div>`
-    
 }
 
 function tela34(){
