@@ -15,6 +15,8 @@ let urlimg2
 let respostaErrada3
 let urlimg3
 
+
+
 //let textoPergunta2
 //let corFundo2
 //let respostaCorreta2
@@ -141,11 +143,26 @@ function obterQuizzes() {
     tela2.classList.remove('esconderTela')
 
     const promise = axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/'+id)
-    promise.then(pagggg2)
+    promise.then(pag2)
     
     }
-    function pagggg2(pegar){
+    function tela22(id){
+      const tela1 = document.querySelector('.tela1')
+      tela1.classList.add('esconderTela')
+      const tela2 = document.querySelector('.tela34')
+      tela2.classList.remove('esconderTela')
+  
+      const promise = axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/'+id)
+      promise.then(pag2)
+      
+      }
+    let seuId
+    function pag2(pegar){
       console.log(pegar)
+      
+      
+     
+      
     let ul = document.querySelector(".tela2");
     ul.innerHTML=`   <main class="pagina-quizz">
     <section class="titulo-quizz">
@@ -242,11 +259,18 @@ function obterQuizzes() {
       </div>`
 
   }
+  let gambiarra =1
   function tela3(){
     const tela1 = document.querySelector('.tela1')
     tela1.classList.add('esconderTela')
     const tela3 = document.querySelector('.tela3')
     tela3.classList.remove('esconderTela')
+    if(gambiarra==1){
+    const dd =document.querySelector(".caixa-texto");
+      dd.innerHTML = ''
+    }
+    gambiarra = gambiarra + 1
+    
     
   }
   function tela32(){
@@ -294,13 +318,13 @@ function obterQuizzes() {
   tela32.classList.add('esconderTela')
   const tela33 = document.querySelector('.tela33 ')
   tela33.classList.remove('esconderTela')
+  
 }
-let ul = document.querySelector(".inserir");
+let ul = document.querySelector(".pergunta2");
 let ul3 = document.querySelector(".pergunta3");
 let ul4 = document.querySelector(".nivel");
 let ul5 = document.querySelector(".nivel2");
-ul.innerHTML='<p> pergunta 2</p>  <img class="imgLapis"  src="vector.png">'
-ul3.innerHTML='pergunta 3'
+ul3.innerHTML='pergunta3'
 ul4.innerHTML='nivel1'
 ul5.innerHTML='nivel2'
 
@@ -391,16 +415,25 @@ function abrirNivel3(){
   tela34.classList.add('esconderTela')
   const tela1 = document.querySelector('.tela1')
   tela1.classList.remove('esconderTela')
- 
+  const dd =document.querySelector(".caixa-texto");
+      dd.innerHTML += `<div  onclick="tela2('${seuId}')" class="container-quizz">
+      <img class="imagem-quizz2" src="${url}">
+      <p class="texto-quizz">dfg</p>
+    </div>`
+    
 }
+
 function tela34(){
  
   let ul6 = document.querySelector(".fim");
   ul6.innerHTML=`<div class="tela344">
+  
   <div class="textoTela3"> <strong> <h1> Seu quiz está pronto</h1> </strong></div>
-  <img src="${url}">
-  <button class="botaoTela31"> Acessar Quizz</button>
-  <div  onclick='voltarHome()'><p>Voltar pra home</p></div>
+  <div class='amarrar'>
+    <img class='imgFim' src="${url}">
+    <button onclick='tela2(${seuId})' class="botaoTela33"> Acessar Quizz</button>
+    <div class='divFim'  onclick='voltarHome()'><p>Voltar pra home</p></div>
+  </div>
 </div>`
   tituloNivel=document.querySelector('.niv1').value
   acertoMinimo=document.querySelector('.niv2').value
@@ -480,8 +513,32 @@ function tela34(){
       }
     ]
   });
+  promise.then(idid)
   
+ 
 }
+const lista =[]
+const imgcaixa =[]
+let imgcaixa2
+  function idid(pegar){
+    console.log(pegar)
+    seuId =pegar.data.id
+    imgcaixa2 =pegar.data.image
+    
+    lista.push(seuId)
+    
+   
+    imgcaixa.push(imgcaixa2)
+
+    const lista2 = JSON.parse(lista)
+    localStorage.setItem("lista3",lista2)
+   
+    const img2 = JSON.parse(imgcaixa)
+    localStorage.setItem("img3",img2)
+    
+   
+
+  }
   
   function renderizarQuizzes(quizzes) {
     const mostrarQuizz = document.querySelector(".corpo-quizzes");
@@ -501,6 +558,29 @@ function tela34(){
           `
 
     }) }
+    
 
     obterQuizzes();
     obterQuizzAberto ();
+    guardarId()
+    function guardarId(){
+      
+      
+      
+      const listaid = localStorage.getItem("lista3")
+      const lista3= JSON.parse(listaid)
+      console.log(lista3)
+      const imgid = localStorage.getItem("img3")
+      const img3= JSON.parse(imgid)
+
+      for(let i=0;i< lista.length;i++){
+        const dd =document.querySelector(".caixa-texto");
+      dd.innerHTML += `<div  onclick="tela2('${lista3[i]}')" class="container-quizz">
+      <img class="imagem-quizz2" src="${img3[i]}">
+      <p class="texto-quizz">dfg</p>
+    </div>`
+  
+
+      }
+    }
+    
