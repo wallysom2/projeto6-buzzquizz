@@ -98,3 +98,103 @@
                 <img src="${quizz.questions[i].answers[j].image}" alt="">
                 <span>${quizz.questions[i].answers[j].text}</span>
             </div>}`
+
+
+
+                function obterQuizzAberto (idquizz){
+      const promise = axios.get(`https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/${idquizz}`);
+      promise.then(resposta => {
+        console.log(resposta.data);
+        const titulo = resposta.data.title
+        console.log (titulo)
+        mostrarQuizzAberto (resposta.data)
+        });
+      promise.catch( erro => {
+        console.error(erro.response);
+        alert("Xiii! Deu ruim na hora de receber mensagens!");
+      })
+    }
+
+    function mostrarQuizzAberto (quizz){
+    const quizzescolhido = quizz;
+    const titulo = document.querySelector(".pagina-quizz")
+      titulo.innerHTML = `      
+          <section class="titulo-quizz">
+              <h2> <span>${quizz.title}</span></h2>
+          </section>`
+     const umquizz = document.querySelector(".titulo-quizz");
+    
+      umquizz.style.backgroundImage = `linear-gradient(0deg, rgba(0, 0, 0, 0.57), rgba(0, 0, 0, 0.57)), url('${quizz.image}')`;
+      quizz.questions.sort(embaralha)
+
+      for (let x = 0; x < quizz.questions.length; x++) {
+        titulo.innerHTML += `
+            <section class="perguntas">
+                <article data-identifier="question" class="pergunta">
+                    <div class="titulo-pergunta" style="background-color: ${quizz.questions[x].color}">
+                        <h3>${quizz.questions[x].title}</h3>
+                    </div>
+                    <div class="bloco-respostas esse${x}"></div>
+                </article>
+            </section`
+        let classpergunta = document.querySelector(`.esse${x}`);
+        
+        for (let y = 0; y < quizz.questions[x].answers.length; y++) {
+          classpergunta.innerHTML += `
+          <div data-identifier="answer" class="resposta pergunta${x}${y} ${quizz.questions[x].answers[y].isCorrectAnswer}" onclick="quizzSelecionado(${x},${y}, ${quizz})">
+              <img src="${quizz.questions[x].answers[y].image}" alt="">
+              <h4>${quizz.questions[x].answers[y].text}</h4>
+          </div> `
+        }
+      } window.scrollTo(0, 0)
+    }
+
+    let questoesrespondidas = 0;
+    let acertos = 0;
+    
+    function quizzSelecionado(numerodaquestao, opcao) {
+        let escolha = document.querySelector(`.pergunta${numerodaquestao}${opcao}`);
+        escolha.classList.add("escolhida");
+
+        console.log (`mostrar escolha ${escolha}`)
+
+        for (let z = 0; z < quizz.questions[numerodaquestao].answers.length; z++) {
+            let umaopcao = document.querySelector(`.pergunta${numerodaquestao}${z}`);
+            umaopcao.removeAttribute('onclick');
+            if (umaopcao != escolha) {
+                umaopcao.classList.add("nop");
+                console.log (`mostrar escolha ${umaopcao}`)
+            }
+            if (umaopcao.classList.contains(false)) {
+                umaopcao.classList.add("errou");
+                console.log (`mostrar escolha ${umaopcao}`)
+            } else {
+                umaopcao.classList.add("acertou");
+                console.log (`mostrar escolha ${umaopcao}`)
+            }
+            let w = z + 1;
+            if (w < quizz.questions.length) {
+                setTimeout(() => {
+                    let irpara = document.querySelector(`.pergunta${numerodaquestao}${z+1}`)
+                    irpara.scrollIntoView()
+                    if (questoesrespondidas == quizzescolhido.questions.length) {
+                        resultadoQuizz()
+                    }
+                }, 2000);
+            }
+        }
+    
+        if (escolha.classList.contains(true)) {
+            acertos += 1;
+            quantidadeAcertos()
+        }
+        questoesrespondidas += 1;
+        console.log(acertos)
+    }
+  
+
+
+
+function embaralha() {
+  return Math.random() - 0.5;
+}
