@@ -84,7 +84,7 @@ function obterQuizzes() {
     }) }
 
     function obterQuizzAberto (){
-      const promise = axios.get("https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/1");
+      const promise = axios.get("https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/994");
       promise.then(resposta => {
         console.log(resposta.data);
         const titulo = resposta.data.title
@@ -127,22 +127,107 @@ function obterQuizzes() {
               <h4>${quizz.questions[x].answers[y].text}</h4>
           </div> `
         }
-      }}
+      } window.scrollTo(0, 0)
+    }
 
+    let questoesrespondidas = 0;
+    let acertos = 0;
 
-function abrirQuizz(respostaquizz) {
-  quizzescolhido = respostaquizz.data;
-  titulo = document.querySelector(".pagina-quizz")
-  titulo.innerHTML = `      
-      <section class="titulo-quizz">
-          <h2> <span>${quizzescolhido.title}</span></h2>
-      </section>`
-  umquizz = document.querySelector(".titulo-quizz");
+function quizzSelecionado(numerodaquestao, opcao) {
+    let escolha = document.querySelector(`.pergunta${numerodaquestao}${opcao}`);
+    escolha.classList.add("escolhida");
+    for (let z = 0; z < quizzescolhido.questions[numerodaquestao].answers.length; z++) {
+        let umaopcao = document.querySelector(`.pergunta${numerodaquestao}${z}`);
+        umaopcao.removeAttribute('onclick');
+        if (umaopcao != escolha) {
+            umaopcao.classList.add("nop");
+        }
+        if (umaopcao.classList.contains(false)) {
+            umaopcao.classList.add("errou");
+        } else {
+            umaopcao.classList.add("acertou");
+        }
+        let w = z + 1;
+        if (w < quizzescolhido.questions.length) {
+            setTimeout(() => {
+                let irpara = document.querySelector(`.pergunta${numerodaquestao}${z+1}`)
+                irpara.scrollIntoView()
+                if (questoesrespondidas == quizzescolhido.questions.length) {
+                    resultadoQuizz()
+                }
+            }, 2000);
+        }
+    }
 
-  umquizz.style.backgroundImage = `linear-gradient(0deg, rgba(0, 0, 0, 0.57), rgba(0, 0, 0, 0.57)), url('${quizzescolhido.image}')`;
-  respostaquizz.questions.sort(embaralha)
+    if (escolha.classList.contains(true)) {
+        acertos += 1;
+        quantidadeAcertos()
+    }
+    questoesrespondidas += 1;
+    console.log(acertos)
 }
 
+let porcentagem = 0;
+let leveltotal = 0;
+let umacerto = 0;
+let porcentagemarredondada = 0;
+let numeronoarray = 0;
+let u = 0
+
+function quantidadeAcertos() {
+    for (u = 0; u < quizzescolhido.levels.length; u++) {
+        leveltotal += quizzescolhido.levels[u].minValue;
+        umacerto = leveltotal / quizzescolhido.questions.length
+    }
+    porcentagem = (acertos * umacerto * 100) / leveltotal;
+    porcentagemarredondada = Math.round(porcentagem);
+    for (u = 0; u < (quizzescolhido.levels.length - 1); u++) {
+        if (porcentagemarredondada <= quizzescolhido.levels[u].minValue) {
+            return u
+        }
+    }
+}
+
+function resultadoQuizz() {
+    let perguntas = document.querySelector(".fim");
+    perguntas.innerHTML = `
+        <article class="resultado" data-identifier="quizz-result">
+            <div class="titulo-resultado">
+                <h3>${porcentagemarredondada}% ${quizzescolhido.levels[u].title}</h3>
+            </div>
+            <div class="conteudo-reultado">
+                <img src="${quizzescolhido.levels[u].image}" alt="Imagem do resultado">
+                <span>${quizzescolhido.levels[u].text}</span>
+            </div>
+        </article>
+        <div class="botoes">
+            <button class="reiniciar-quizz" onclick="reiniciarQuizz()">
+                <p>Reiniciar Quizz</p>
+            </button>
+            <button class="voltar-inicio" onclick="paginaInicial()">
+                <p>Voltar pra home</p>
+            </button>
+        </div>`
+    irpara = document.querySelector(".voltar-inicio")
+    irpara.scrollIntoView()
+}
+
+function paginaInicial() {
+    window.location.reload();
+}
+
+function reiniciarQuizz() {
+    getQuizz(identificador);
+    apagarresultado = document.querySelector(".fim");
+    apagarresultado.innerHTML = ""
+}
+
+function erroPegouQuizz(error) {
+    alert(`
+        Infelizmente não foi possível pegar seu Quizz no servidor.
+        ${error.data}
+    `);
+}
 
 
 function embaralha() {

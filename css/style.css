@@ -337,7 +337,6 @@ header {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  
 }
 .resposta {
   width: 45%;
@@ -422,5 +421,16 @@ margin: auto;
 margin-top: 15px;
 display: flex;
 justify-content: center;
+}
 
+.nop {
+  opacity: 0.3;
+}
+
+.errou {
+  color: red;
+}
+
+.acertou {
+  color: green;
 }
