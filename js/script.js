@@ -290,9 +290,20 @@ function obterQuizzes() {
     if(quantidadeNiveis <2){
       alert('Quantidade de níveis: no mínimo 2 níveis')
     }
+    //for(let i=0;i<url.length;i++){
+
+    let urlvalido
+    if(url[0]=='h'&& url[1]=='t'&&url[2]=='t'&&url[3]=='p'&&url[4]=='s'&&url[5]==':'&&url[6]=='/' || url[0]=='d'&& url[1]=='a'&&url[2]=='t'&&url[3]=='a'&&url[4]==':'){
+      urlvalido = true
+    }else{
+      urlvalido = false
+      alert('URL invalida')
+    }
+    
+    //https:/
     console.log(quantidadeNiveis <=2)
     console.log(quantidadeNiveis)
-    if(tituloQuizz !=='' && url !=='' && quantidadePerguntas !=='' && quantidadeNiveis !=='' && 65>=tituloQuizz.length && tituloQuizz.length >=20 && quantidadePerguntas >=3 && quantidadeNiveis >=2){
+    if(tituloQuizz !=='' && url !=='' && quantidadePerguntas !=='' && quantidadeNiveis !=='' && 65>=tituloQuizz.length && tituloQuizz.length >=20 && quantidadePerguntas >=3 && quantidadeNiveis >=2 && urlvalido){
       const tela3 = document.querySelector('.tela3')
       tela3.classList.add('esconderTela')
       const tela32 = document.querySelector('.tela32 ')
